@@ -17,6 +17,9 @@ function addToCart(event) {
 
     event.preventDefault();
     event.target.setAttribute("disabled", "true");
+    event.target.id = Date.now().toString();
+
+
     document.getElementById("buy-from-mini-cart").removeAttribute("disabled");
 
     let selectedProduct = event.target.parentNode;
@@ -36,7 +39,12 @@ function addToCart(event) {
     
     let selectedShoeImg = parentElement.firstElementChild.src;
 
+    let list = document.querySelector(".selected-shoes-list");
+    let listSize = list.getElementsByTagName("li").length;
+    let li = document.createElement("li");
+
     let newItem = {
+        id: event.target.id,
         name: selectedShoeName.innerHTML,
         img: selectedShoeImg,
         price: parseInt(selectedShoePrice.innerHTML),
@@ -46,10 +54,6 @@ function addToCart(event) {
     cartItems.push(newItem);
 
     
-
-    let list = document.querySelector(".selected-shoes-list");
-    let size = list.getElementsByTagName("li").length;
-    let li = document.createElement("li");
  
     li.className = "row";
     li.innerHTML =
@@ -61,7 +65,7 @@ function addToCart(event) {
             <p>${selectedShoeName.innerHTML}</p>
             <span>Price: ${selectedShoePrice.innerHTML} </span>
             <span>Shoe Size: ${selectedShoeSize}</span>
-            <button type="button" class="btn btn-outline-danger btn-sm">REMOVE</button>
+            <button type="button" class="btn btn-outline-danger btn-sm" onclick="removeFromCart(event)">REMOVE</button>
             <hr>
         </div>    
 
@@ -71,4 +75,28 @@ function addToCart(event) {
 
     let shoppingCartCount = document.querySelector('#lblCartCount');
     shoppingCartCount.innerHTML = cartItems.length;
+}
+
+
+function removeFromCart(event) {
+    event.preventDefault();
+
+    let selectedShoes = event.target.parentNode.parentNode;
+    let listOfShoes = selectedShoes.parentNode;
+
+    let index = Array.from(listOfShoes.children).indexOf(selectedShoes);
+    let listItemID = cartItems[index].id
+    cartItems.splice(index, 1);
+    listOfShoes.removeChild(selectedShoes);
+
+    let addToCartButton = document.getElementById(`${listItemID}`)
+    addToCartButton.disabled = false
+
+    let shoppingCartCount = document.querySelector('#lblCartCount');
+    shoppingCartCount.innerHTML = cartItems.length;
+
+    if(document.querySelector(".selected-shoes-list").getElementsByTagName("li").length == 0){
+        document.getElementById("buy-from-mini-cart").setAttribute("disabled", "true");
+    }
+
 }

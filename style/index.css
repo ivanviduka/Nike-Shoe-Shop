@@ -15,13 +15,13 @@ body > section > h2{
     text-transform: uppercase;
 }
 #lblCartCount {
-    font-size: 12px;
+    font-size: 13px;
     background: #ff0000;
     color: #fff;
-    padding: 0 5px;
+    padding: 1px 5px;
     vertical-align: top;
     margin-left: -5px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 .badge {
   padding-left: 9px;
