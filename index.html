@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Nike Shoes Web Shop">
+    <meta name="keywords" content="NIKE, Shoes, Sports Moments">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nike Shoes</title>
@@ -52,49 +54,56 @@
 
                             <form action="./cart-page.php" method="POST" class="px-4 py-3">
 
-                                <h4 class=".heading4" style="text-align: center;">MY CART</h4>
+                                <h4 class="heading4" style="text-align: center;">MY CART</h4>
                                 <hr>
 
                                 <ul name="shoesArray">
                                     <li class="row">
-                                        <img class="" src="/img/shoes/air-force-1-gtx.png" alt="Selected Shoes"
+
+                                        <img class="" src="/img/shoes/air-force-1-gtx.png" alt="Selected Shoes" loading="lazy"
                                             width="100%" height="80%">
 
                                         <div class="shoe-info">
                                             <p>Air Force One</p>
                                             <span>Price: 200$</span>
                                             <span>Shoe Size: 46</span>
+                                            <button type="button" class="btn btn-outline-danger btn-sm">REMOVE</button>
+                                            <hr>
+                                        </div>
+
+
+                                    </li>
+
+                                    <li class="row">
+                                        <img class="" src="/img/shoes/free-rn-2018-.jpg" alt="Selected Shoes" loading="lazy"
+                                            width="100%" height="80%">
+
+                                        <div class="shoe-info">
+                                            <p>Air Force One</p>
+                                            <span>Price: 200$</span>
+                                            <span>Shoe Size: 46</span>
+                                            <button type="button" class="btn btn-outline-danger btn-sm">REMOVE</button>
                                             <hr>
                                         </div>
                                     </li>
 
                                     <li class="row">
-                                        <img class="" src="/img/shoes/free-rn-2018-.jpg" alt="Selected Shoes"
+                                        <img class="" src="/img/shoes/air-zoom-pegasus-38.jpg" alt="Selected Shoes" loading="lazy"
                                             width="100%" height="80%">
 
                                         <div class="shoe-info">
                                             <p>Air Force One</p>
                                             <span>Price: 200$</span>
                                             <span>Shoe Size: 46</span>
-                                            <hr>
-                                        </div>
-                                    </li>
-
-                                    <li class="row">
-                                        <img class="" src="/img/shoes/air-zoom-pegasus-38.jpg" alt="Selected Shoes"
-                                            width="100%" height="80%">
-
-                                        <div class="shoe-info">
-                                            <p>Air Force One</p>
-                                            <span>Price: 200$</span>
-                                            <span>Shoe Size: 46</span>
+                                            <button type="button" class="btn btn-outline-danger btn-sm">REMOVE</button>
                                             <hr>
                                         </div>
                                     </li>
                                 </ul>
 
-                                <input id="buy-from-mini-cart" class="btn btn-dark" type="submit" value="Buy now"
+                                <input id="buy-from-mini-cart" class="btn btn-dark" type="submit" value="BUY NOW"
                                     aria-label="Purchase items from cart">
+                            </form>
 
                         </div>
 
@@ -119,12 +128,10 @@
 
         <h2 style="text-align: center;">We are proud to be part of these moments</h2>
 
-
-
         <div class="container">
 
-
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div
@@ -150,13 +157,14 @@
                             <picture class="col-sm-12 col-md-5">
                                 <source media="(max-width: 966px)" srcset="img/odell-beckham-catch-min.jpg">
                                 <source media="(min-width: 967px)" srcset="img/odell-beckham-catch.jpg">
-                                <img class="athlete-picture" src="img/odell-beckham-catch.jpg" alt="Odell Beckham catch"
-                                    width="100%" height="100%">
+                                <img class="athlete-picture" src="img/odell-beckham-catch.jpg" alt="Odell Beckham catch" loading="lazy"
+                                    width="100%" height="85%">
                             </picture>
 
                         </div>
 
                     </div>
+
                     <div class="carousel-item">
                         <div
                             class="border-top border-bottom border-dark  shadow p-3 mb-5 bg-body rounded  d-flex justify-content-around row">
@@ -187,11 +195,12 @@
                                 <source media="(max-width: 966px)" srcset="img/serena-williams-23-grand-slams-min.jpg">
                                 <source media="(min-width: 967px)" srcset="img/serena-williams-23-grand-slams.jpg">
                                 <img class="athlete-picture" src="img/serena-williams-23-grand-slams.jpg"
-                                    alt="Serena Williams wins her 23rd grand slam" width="100%" height="100%">
+                                    alt="Serena Williams wins her 23rd grand slam" width="100%" height="100%" loading="lazy">
                             </picture>
 
                         </div>
                     </div>
+
                     <div class="carousel-item">
                         <div
                             class="border-top border-bottom border-dark  shadow p-3 mb-5 bg-body rounded  d-flex justify-content-around row">
@@ -227,11 +236,12 @@
                                 <source media="(max-width: 966px)" srcset="img/lebron-james-trophy-min.jpg">
                                 <source media="(min-width: 967px)" srcset="img/lebron-james-trophy.jpg">
                                 <img class="athlete-picture" src="img/lebron-james-trophy.jpg"
-                                    alt="Lebron James Game 7 of finals" width="100%" height="100%">
+                                    alt="Lebron James Game 7 of finals" width="100%" height="100%" loading="lazy">
                             </picture>
 
                         </div>
                     </div>
+
                     <div class="carousel-item">
                         <div
                             class="border-top border-bottom border-dark  shadow p-3 mb-5 bg-body rounded  d-flex justify-content-around row">
@@ -275,12 +285,12 @@
                                 <source media="(max-width: 966px)" srcset="img/eliud-kipchoge-marathon-min.jpg">
                                 <source media="(min-width: 967px)" srcset="img/eliud-kipchoge-marathon.jpg">
                                 <img class="athlete-picture" src="img/eliud-kipchoge-marathon.jpg"
-                                    alt="Eliud Kipchoge at finish line" width="100%" height="100%">
+                                    alt="Eliud Kipchoge at finish line" width="100%" height="100%" loading="lazy">
                             </picture>
-
 
                         </div>
                     </div>
+                    
                     <div class="carousel-item">
                         <div
                             class="border-top border-bottom border-dark  shadow p-3 mb-5 bg-body rounded  d-flex justify-content-around row">
@@ -311,11 +321,12 @@
                                 <source media="(max-width: 966px)" srcset="img/cr7-bicycle-min.jpg">
                                 <source media="(min-width: 967px)" srcset="img/cr7-bicycle.jpg">
                                 <img class="athlete-picture" src="img/cr7-bicycle.jpg"
-                                    alt="Cristiano Ronaldo bicycle kick" width="100%" height="100%">
+                                    alt="Cristiano Ronaldo bicycle kick" width="100%" height="100%" loading="lazy">
                             </picture>
 
                         </div>
                     </div>
+
                     <div class="carousel-item">
                         <div
                             class="border-top border-bottom border-dark  shadow p-3 mb-5 bg-body rounded  d-flex justify-content-around row">
@@ -353,11 +364,12 @@
                                 <source media="(max-width: 966px)" srcset="img/mo-farah-wr-min.jpg">
                                 <source media="(min-width: 967px)" srcset="img/mo-farah-wr.jpg">
                                 <img class="athlete-picture" src="img/mo-farah-wr.jpg"
-                                    alt="Mo Farah sets new world record" width="100%" height="100%">
+                                    alt="Mo Farah sets new world record" width="100%" height="100%" loading="lazy">
                             </picture>
 
                         </div>
                     </div>
+
                     <div class="carousel-item">
 
                         <div
@@ -396,11 +408,12 @@
                                 <source media="(max-width: 966px)" srcset="img/Mike-Trout-catch-min.jpg">
                                 <source media="(min-width: 967px)" srcset="img/Mike-Trout-catch.jpg">
                                 <img class="athlete-picture" src="img/Mike-Trout-catch.jpg"
-                                    alt="Mike Trout catch at the wall" width="100%" height="100%">
+                                    alt="Mike Trout catch at the wall" width="100%" height="100%" loading="lazy">
                             </picture>
 
                         </div>
                     </div>
+
                     <div class="carousel-item">
                         <div
                             class="border-top border-bottom border-dark  shadow p-3 mb-5 bg-body rounded  d-flex justify-content-around row">
@@ -436,11 +449,12 @@
                                 <source media="(max-width: 966px)" srcset="img/michael-jordan-flu-game-min.jpg">
                                 <source media="(min-width: 967px)" srcset="img/michael-jordan-flu-game.jpg">
                                 <img class="athlete-picture" src="img/michael-jordan-flu-game.jpg"
-                                    alt="Michael Jordan Flu Game" width="100%" height="100%">
+                                    alt="Michael Jordan Flu Game" width="100%" height="100%" loading="lazy">
                             </picture>
 
                         </div>
                     </div>
+
                     <div class="carousel-item">
                         <div
                             class="border-top border-bottom border-dark  shadow p-3 mb-5 bg-body rounded  d-flex justify-content-around row">
@@ -475,11 +489,12 @@
                                 <source media="(max-width: 966px)" srcset="img/rafael-nadal-2008-Wimbledon-min.jpg">
                                 <source media="(min-width: 967px)" srcset="img/rafael-nadal-2008-Wimbledon.jpg">
                                 <img class="athlete-picture" src="img/rafael-nadal-2008-Wimbledon.jpg"
-                                    alt="Rafael Nadal wins Wimbledon" width="100%" height="100%">
+                                    alt="Rafael Nadal wins Wimbledon" width="100%" height="100%" loading="lazy">
                             </picture>
 
                         </div>
                     </div>
+
                     <div class="carousel-item">
                         <div
                             class="border-top border-bottom border-dark  shadow p-3 mb-5 bg-body rounded  d-flex justify-content-around row">
@@ -517,12 +532,13 @@
                                 <source media="(max-width: 966px)" srcset="img/tiger-woods-2019-masters-min.jpg">
                                 <source media="(min-width: 967px)" srcset="img/tiger-woods-2019-masters.jpg">
                                 <img class="athlete-picture" src="img/tiger-woods-2019-masters.jpg"
-                                    alt="Tiger Woods wins 2019 Masters" width="100%" height="100%">
+                                    alt="Tiger Woods wins 2019 Masters" width="100%" height="100%" loading="lazy">
                             </picture>
 
                         </div>
                     </div>
                 </div>
+
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                     data-bs-slide="prev">
                     <span class="slide-buttons carousel-control-prev-icon" aria-hidden="true"></span>
@@ -533,6 +549,7 @@
                     <span class="slide-buttons carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
+
             </div>
 
 
@@ -544,8 +561,6 @@
 
         <div class="d-flex justify-content-around row">
 
-
-
             <div class="col-sm-8 col-md-3 m-1">
 
                 <img class="col-12 m-2 col-sm-12 m-sm-0" src="img/shoes/zoomx-vaporfly.jpg" alt="Shoes">
@@ -555,159 +570,154 @@
                     <p> Price: <span>250$</span></p>
 
                     <div class="size-options">
-                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
-                        <label class="btn btn-secondary" for="option1">35</label>
+                        <input type="radio" class="btn-check" name="options1" id="option1-1" autocomplete="off" checked>
+                        <label class="btn btn-secondary" for="option1-1">35</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-                        <label class="btn btn-secondary" for="option2">36</label>
+                        <input type="radio" class="btn-check" name="options1" id="option1-2" autocomplete="off">
+                        <label class="btn btn-secondary" for="option1-2">36</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
-                        <label class="btn btn-secondary" for="option3">37</label>
+                        <input type="radio" class="btn-check" name="options1" id="option1-3" autocomplete="off">
+                        <label class="btn btn-secondary" for="option1-3">37</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
-                        <label class="btn btn-secondary" for="option4">38</label>
+                        <input type="radio" class="btn-check" name="options1" id="option1-4" autocomplete="off">
+                        <label class="btn btn-secondary" for="option1-4">38</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option5" autocomplete="off">
-                        <label class="btn btn-secondary" for="option5">39</label>
+                        <input type="radio" class="btn-check" name="options1" id="option1-5" autocomplete="off">
+                        <label class="btn btn-secondary" for="option1-5">39</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option6" autocomplete="off">
-                        <label class="btn btn-secondary" for="option6">40</label>
+                        <input type="radio" class="btn-check" name="options1" id="option1-6" autocomplete="off">
+                        <label class="btn btn-secondary" for="option1-6">40</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option7" autocomplete="off">
-                        <label class="btn btn-secondary" for="option7">41</label>
+                        <input type="radio" class="btn-check" name="options1" id="option1-7" autocomplete="off">
+                        <label class="btn btn-secondary" for="option1-7">41</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option8" autocomplete="off">
-                        <label class="btn btn-secondary" for="option8">42</label>
+                        <input type="radio" class="btn-check" name="options1" id="option1-8" autocomplete="off">
+                        <label class="btn btn-secondary" for="option1-8">42</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option9" autocomplete="off">
-                        <label class="btn btn-secondary" for="option9">43</label>
+                        <input type="radio" class="btn-check" name="options1" id="option1-9" autocomplete="off">
+                        <label class="btn btn-secondary" for="option1-9">43</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option10" autocomplete="off">
-                        <label class="btn btn-secondary" for="option10">44</label>
+                        <input type="radio" class="btn-check" name="options1" id="option1-10" autocomplete="off">
+                        <label class="btn btn-secondary" for="option1-10">44</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option11" autocomplete="off">
-                        <label class="btn btn-secondary" for="option11">45</label>
+                        <input type="radio" class="btn-check" name="options1" id="option1-11" autocomplete="off">
+                        <label class="btn btn-secondary" for="option1-11">45</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option12" autocomplete="off">
-                        <label class="btn btn-secondary" for="option12">46</label>
+                        <input type="radio" class="btn-check" name="options1" id="option1-12" autocomplete="off">
+                        <label class="btn btn-secondary" for="option1-12">46</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option13" autocomplete="off">
-                        <label class="btn btn-secondary" for="option13">47</label>
+                        <input type="radio" class="btn-check" name="options1" id="option1-13" autocomplete="off">
+                        <label class="btn btn-secondary" for="option1-13">47</label>
                     </div>
 
                     <button class="add-to-cart btn btn-dark mb-4">ADD TO CART</button>
 
-
                 </div>
-
-
 
             </div>
 
             <div class="col-sm-8 col-md-3 m-1">
 
-                <img class="col-12 m-2 col-sm-12 m-sm-0" src="img/shoes/air-force-1-gtx.png" alt="Shoes">
+                <img class="col-12 m-2 col-sm-12 m-sm-0" src="img/shoes/air-force-1-gtx.png" alt="Shoes" loading="lazy">
 
                 <div class="shoe-description">
                     <h3>Nike Air Force 1 GTX</h3>
                     <p> Price: <span>120$</span></p>
 
                     <div class="size-options">
-                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
-                        <label class="btn btn-secondary" for="option1">35</label>
+                        <input type="radio" class="btn-check" name="options2" id="option2-1" autocomplete="off" checked>
+                        <label class="btn btn-secondary" for="option2-1">35</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-                        <label class="btn btn-secondary" for="option2">36</label>
+                        <input type="radio" class="btn-check" name="options2" id="option2-2" autocomplete="off">
+                        <label class="btn btn-secondary" for="option2-2">36</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
-                        <label class="btn btn-secondary" for="option3">37</label>
+                        <input type="radio" class="btn-check" name="options2" id="option2-3" autocomplete="off">
+                        <label class="btn btn-secondary" for="option2-3">37</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
-                        <label class="btn btn-secondary" for="option4">38</label>
+                        <input type="radio" class="btn-check" name="options2" id="option2-4" autocomplete="off">
+                        <label class="btn btn-secondary" for="option2-4">38</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option5" autocomplete="off">
-                        <label class="btn btn-secondary" for="option5">39</label>
+                        <input type="radio" class="btn-check" name="options2" id="option2-5" autocomplete="off">
+                        <label class="btn btn-secondary" for="option2-5">39</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option6" autocomplete="off">
-                        <label class="btn btn-secondary" for="option6">40</label>
+                        <input type="radio" class="btn-check" name="options2" id="option2-6" autocomplete="off">
+                        <label class="btn btn-secondary" for="option2-6">40</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option7" autocomplete="off">
-                        <label class="btn btn-secondary" for="option7">41</label>
+                        <input type="radio" class="btn-check" name="options2" id="option2-7" autocomplete="off">
+                        <label class="btn btn-secondary" for="option2-7">41</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option8" autocomplete="off">
-                        <label class="btn btn-secondary" for="option8">42</label>
+                        <input type="radio" class="btn-check" name="options2" id="option2-8" autocomplete="off">
+                        <label class="btn btn-secondary" for="option2-8">42</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option9" autocomplete="off">
-                        <label class="btn btn-secondary" for="option9">43</label>
+                        <input type="radio" class="btn-check" name="options2" id="option2-9" autocomplete="off">
+                        <label class="btn btn-secondary" for="option2-9">43</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option10" autocomplete="off">
-                        <label class="btn btn-secondary" for="option10">44</label>
+                        <input type="radio" class="btn-check" name="options2" id="option2-10" autocomplete="off">
+                        <label class="btn btn-secondary" for="option2-10">44</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option11" autocomplete="off">
-                        <label class="btn btn-secondary" for="option11">45</label>
+                        <input type="radio" class="btn-check" name="options2" id="option2-11" autocomplete="off">
+                        <label class="btn btn-secondary" for="option2-11">45</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option12" autocomplete="off">
-                        <label class="btn btn-secondary" for="option12">46</label>
+                        <input type="radio" class="btn-check" name="options2" id="option2-12" autocomplete="off">
+                        <label class="btn btn-secondary" for="option2-12">46</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option13" autocomplete="off">
-                        <label class="btn btn-secondary" for="option13">47</label>
+                        <input type="radio" class="btn-check" name="options2" id="option2-13" autocomplete="off">
+                        <label class="btn btn-secondary" for="option2-13">47</label>
                     </div>
 
                     <button class="add-to-cart btn btn-dark mb-4">ADD TO CART</button>
 
                 </div>
 
-
-
             </div>
 
             <div class="col-sm-8 col-md-3 m-1">
 
-                <img class="col-12 m-2 col-sm-12 m-sm-0" src="img/shoes/air-max-270.jpg" alt="Shoes">
+                <img class="col-12 m-2 col-sm-12 m-sm-0" src="img/shoes/air-max-270.jpg" alt="Shoes" loading="lazy">
 
                 <div class="shoe-description">
                     <h3>Nike Air Max 270</h3>
                     <p> Price: <span>150$</span></p>
 
                     <div class="size-options">
-                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
-                        <label class="btn btn-secondary" for="option1">35</label>
+                        <input type="radio" class="btn-check" name="options3" id="option3-1" autocomplete="off" checked>
+                        <label class="btn btn-secondary" for="option3-1">35</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-                        <label class="btn btn-secondary" for="option2">36</label>
+                        <input type="radio" class="btn-check" name="options3" id="option3-2" autocomplete="off">
+                        <label class="btn btn-secondary" for="option3-2">36</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
-                        <label class="btn btn-secondary" for="option3">37</label>
+                        <input type="radio" class="btn-check" name="options3" id="option3-3" autocomplete="off">
+                        <label class="btn btn-secondary" for="option3-3">37</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
-                        <label class="btn btn-secondary" for="option4">38</label>
+                        <input type="radio" class="btn-check" name="options3" id="option3-4" autocomplete="off">
+                        <label class="btn btn-secondary" for="option3-4">38</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option5" autocomplete="off">
-                        <label class="btn btn-secondary" for="option5">39</label>
+                        <input type="radio" class="btn-check" name="options3" id="option3-5" autocomplete="off">
+                        <label class="btn btn-secondary" for="option3-5">39</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option6" autocomplete="off">
-                        <label class="btn btn-secondary" for="option6">40</label>
+                        <input type="radio" class="btn-check" name="options3" id="option3-6" autocomplete="off">
+                        <label class="btn btn-secondary" for="option3-6">40</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option7" autocomplete="off">
-                        <label class="btn btn-secondary" for="option7">41</label>
+                        <input type="radio" class="btn-check" name="options3" id="option3-7" autocomplete="off">
+                        <label class="btn btn-secondary" for="option3-7">41</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option8" autocomplete="off">
-                        <label class="btn btn-secondary" for="option8">42</label>
+                        <input type="radio" class="btn-check" name="options3" id="option3-8" autocomplete="off">
+                        <label class="btn btn-secondary" for="option3-8">42</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option9" autocomplete="off">
-                        <label class="btn btn-secondary" for="option9">43</label>
+                        <input type="radio" class="btn-check" name="options3" id="option3-9" autocomplete="off">
+                        <label class="btn btn-secondary" for="option3-9">43</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option10" autocomplete="off">
-                        <label class="btn btn-secondary" for="option10">44</label>
+                        <input type="radio" class="btn-check" name="options3" id="option3-10" autocomplete="off">
+                        <label class="btn btn-secondary" for="option3-10">44</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option11" autocomplete="off">
-                        <label class="btn btn-secondary" for="option11">45</label>
+                        <input type="radio" class="btn-check" name="options3" id="option3-11" autocomplete="off">
+                        <label class="btn btn-secondary" for="option3-11">45</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option12" autocomplete="off">
-                        <label class="btn btn-secondary" for="option12">46</label>
+                        <input type="radio" class="btn-check" name="options3" id="option3-12" autocomplete="off">
+                        <label class="btn btn-secondary" for="option3-12">46</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option13" autocomplete="off">
-                        <label class="btn btn-secondary" for="option13">47</label>
+                        <input type="radio" class="btn-check" name="options3" id="option3-13" autocomplete="off">
+                        <label class="btn btn-secondary" for="option3-13">47</label>
                     </div>
 
                     <button class="add-to-cart btn btn-dark mb-4">ADD TO CART</button>
@@ -717,51 +727,51 @@
 
             <div class="col-sm-8 col-md-3 m-1">
 
-                <img class="col-12 m-2 col-sm-12 m-sm-0" src="img/shoes/air-jordan-1-mid.jpg" alt="Shoes">
+                <img class="col-12 m-2 col-sm-12 m-sm-0" src="img/shoes/air-jordan-1-mid.jpg" alt="Shoes" loading="lazy">
 
                 <div class="shoe-description">
                     <h3>Air Jordan 1 Mid</h3>
                     <p> Price: <span>120$</span></p>
 
                     <div class="size-options">
-                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
-                        <label class="btn btn-secondary" for="option1">35</label>
+                        <input type="radio" class="btn-check" name="options4" id="option4-1" autocomplete="off" checked>
+                        <label class="btn btn-secondary" for="option4-1">35</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-                        <label class="btn btn-secondary" for="option2">36</label>
+                        <input type="radio" class="btn-check" name="options4" id="option4-2" autocomplete="off">
+                        <label class="btn btn-secondary" for="option4-2">36</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
-                        <label class="btn btn-secondary" for="option3">37</label>
+                        <input type="radio" class="btn-check" name="options4" id="option4-3" autocomplete="off">
+                        <label class="btn btn-secondary" for="option4-3">37</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
-                        <label class="btn btn-secondary" for="option4">38</label>
+                        <input type="radio" class="btn-check" name="options4" id="option4-4" autocomplete="off">
+                        <label class="btn btn-secondary" for="option4-4">38</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option5" autocomplete="off">
-                        <label class="btn btn-secondary" for="option5">39</label>
+                        <input type="radio" class="btn-check" name="options4" id="option4-5" autocomplete="off">
+                        <label class="btn btn-secondary" for="option4-5">39</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option6" autocomplete="off">
-                        <label class="btn btn-secondary" for="option6">40</label>
+                        <input type="radio" class="btn-check" name="options4" id="option4-6" autocomplete="off">
+                        <label class="btn btn-secondary" for="option4-6">40</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option7" autocomplete="off">
-                        <label class="btn btn-secondary" for="option7">41</label>
+                        <input type="radio" class="btn-check" name="options4" id="option4-7" autocomplete="off">
+                        <label class="btn btn-secondary" for="option4-7">41</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option8" autocomplete="off">
-                        <label class="btn btn-secondary" for="option8">42</label>
+                        <input type="radio" class="btn-check" name="options4" id="option4-8" autocomplete="off">
+                        <label class="btn btn-secondary" for="option4-8">42</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option9" autocomplete="off">
-                        <label class="btn btn-secondary" for="option9">43</label>
+                        <input type="radio" class="btn-check" name="options4" id="option4-9" autocomplete="off">
+                        <label class="btn btn-secondary" for="option4-9">43</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option10" autocomplete="off">
-                        <label class="btn btn-secondary" for="option10">44</label>
+                        <input type="radio" class="btn-check" name="options4" id="option4-10" autocomplete="off">
+                        <label class="btn btn-secondary" for="option4-10">44</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option11" autocomplete="off">
-                        <label class="btn btn-secondary" for="option11">45</label>
+                        <input type="radio" class="btn-check" name="options4" id="option4-11" autocomplete="off">
+                        <label class="btn btn-secondary" for="option4-11">45</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option12" autocomplete="off">
-                        <label class="btn btn-secondary" for="option12">46</label>
+                        <input type="radio" class="btn-check" name="options4" id="option4-12" autocomplete="off">
+                        <label class="btn btn-secondary" for="option4-12">46</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option13" autocomplete="off">
-                        <label class="btn btn-secondary" for="option13">47</label>
+                        <input type="radio" class="btn-check" name="options4" id="option4-13" autocomplete="off">
+                        <label class="btn btn-secondary" for="option4-13">47</label>
                     </div>
 
                     <button class="add-to-cart btn btn-dark mb-4">ADD TO CART</button>
@@ -771,163 +781,159 @@
 
             <div class="col-sm-8 col-md-3 m-1">
 
-                <img class="col-12 m-2 col-sm-12 m-sm-0" src="img/shoes/zoomx-invincible-run-flyknit.jpg" alt="Shoes">
+                <img class="col-12 m-2 col-sm-12 m-sm-0" src="img/shoes/zoomx-invincible-run-flyknit.jpg" alt="Shoes" loading="lazy">
 
                 <div class="shoe-description">
                     <h3>Nike ZoomX Invincible Run Flyknit</h3>
                     <p> Price: <span>180$</span></p>
 
                     <div class="size-options">
-                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
-                        <label class="btn btn-secondary" for="option1">35</label>
+                        <input type="radio" class="btn-check" name="options5" id="option5-1" autocomplete="off" checked>
+                        <label class="btn btn-secondary" for="option5-1">35</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-                        <label class="btn btn-secondary" for="option2">36</label>
+                        <input type="radio" class="btn-check" name="options5" id="option5-2" autocomplete="off">
+                        <label class="btn btn-secondary" for="option5-2">36</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
-                        <label class="btn btn-secondary" for="option3">37</label>
+                        <input type="radio" class="btn-check" name="options5" id="option5-3" autocomplete="off">
+                        <label class="btn btn-secondary" for="option5-3">37</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
-                        <label class="btn btn-secondary" for="option4">38</label>
+                        <input type="radio" class="btn-check" name="options5" id="option5-4" autocomplete="off">
+                        <label class="btn btn-secondary" for="option5-4">38</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option5" autocomplete="off">
-                        <label class="btn btn-secondary" for="option5">39</label>
+                        <input type="radio" class="btn-check" name="options5" id="option5-5" autocomplete="off">
+                        <label class="btn btn-secondary" for="option5-5">39</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option6" autocomplete="off">
-                        <label class="btn btn-secondary" for="option6">40</label>
+                        <input type="radio" class="btn-check" name="options5" id="option5-6" autocomplete="off">
+                        <label class="btn btn-secondary" for="option5-6">40</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option7" autocomplete="off">
-                        <label class="btn btn-secondary" for="option7">41</label>
+                        <input type="radio" class="btn-check" name="options5" id="option5-7" autocomplete="off">
+                        <label class="btn btn-secondary" for="option5-7">41</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option8" autocomplete="off">
-                        <label class="btn btn-secondary" for="option8">42</label>
+                        <input type="radio" class="btn-check" name="options5" id="option5-8" autocomplete="off">
+                        <label class="btn btn-secondary" for="option5-8">42</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option9" autocomplete="off">
-                        <label class="btn btn-secondary" for="option9">43</label>
+                        <input type="radio" class="btn-check" name="options5" id="option5-9" autocomplete="off">
+                        <label class="btn btn-secondary" for="option5-9">43</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option10" autocomplete="off">
-                        <label class="btn btn-secondary" for="option10">44</label>
+                        <input type="radio" class="btn-check" name="options5" id="option5-10" autocomplete="off">
+                        <label class="btn btn-secondary" for="option5-10">44</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option11" autocomplete="off">
-                        <label class="btn btn-secondary" for="option11">45</label>
+                        <input type="radio" class="btn-check" name="options5" id="option5-11" autocomplete="off">
+                        <label class="btn btn-secondary" for="option5-11">45</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option12" autocomplete="off">
-                        <label class="btn btn-secondary" for="option12">46</label>
+                        <input type="radio" class="btn-check" name="options5" id="option5-12" autocomplete="off">
+                        <label class="btn btn-secondary" for="option5-12">46</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option13" autocomplete="off">
-                        <label class="btn btn-secondary" for="option13">47</label>
+                        <input type="radio" class="btn-check" name="options5" id="option5-13" autocomplete="off">
+                        <label class="btn btn-secondary" for="option5-13">47</label>
                     </div>
 
                     <button class="add-to-cart btn btn-dark mb-4">ADD TO CART</button>
                 </div>
 
-
-
             </div>
 
             <div class="col-sm-8 col-md-3 m-1">
 
-                <img class="col-12 m-2 col-sm-12 m-sm-0" src="img/shoes/free-rn-2018-.jpg" alt="Shoes">
+                <img class="col-12 m-2 col-sm-12 m-sm-0" src="img/shoes/free-rn-2018-.jpg" alt="Shoes" loading="lazy">
 
                 <div class="shoe-description">
                     <h3>Nike Free RN 2018</h3>
                     <p> Price: <span>85$</span></p>
 
                     <div class="size-options">
-                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
-                        <label class="btn btn-secondary" for="option1">35</label>
+                        <input type="radio" class="btn-check" name="options6" id="option6-1" autocomplete="off" checked>
+                        <label class="btn btn-secondary" for="option6-1">35</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-                        <label class="btn btn-secondary" for="option2">36</label>
+                        <input type="radio" class="btn-check" name="options6" id="option6-2" autocomplete="off">
+                        <label class="btn btn-secondary" for="option6-2">36</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
-                        <label class="btn btn-secondary" for="option3">37</label>
+                        <input type="radio" class="btn-check" name="options6" id="option6-3" autocomplete="off">
+                        <label class="btn btn-secondary" for="option6-3">37</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
-                        <label class="btn btn-secondary" for="option4">38</label>
+                        <input type="radio" class="btn-check" name="options6" id="option6-4" autocomplete="off">
+                        <label class="btn btn-secondary" for="option6-4">38</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option5" autocomplete="off">
-                        <label class="btn btn-secondary" for="option5">39</label>
+                        <input type="radio" class="btn-check" name="options6" id="option6-5" autocomplete="off">
+                        <label class="btn btn-secondary" for="option6-5">39</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option6" autocomplete="off">
-                        <label class="btn btn-secondary" for="option6">40</label>
+                        <input type="radio" class="btn-check" name="options6" id="option6-6" autocomplete="off">
+                        <label class="btn btn-secondary" for="option6-6">40</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option7" autocomplete="off">
-                        <label class="btn btn-secondary" for="option7">41</label>
+                        <input type="radio" class="btn-check" name="options6" id="option6-7" autocomplete="off">
+                        <label class="btn btn-secondary" for="option6-7">41</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option8" autocomplete="off">
-                        <label class="btn btn-secondary" for="option8">42</label>
+                        <input type="radio" class="btn-check" name="options6" id="option6-8" autocomplete="off">
+                        <label class="btn btn-secondary" for="option6-8">42</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option9" autocomplete="off">
-                        <label class="btn btn-secondary" for="option9">43</label>
+                        <input type="radio" class="btn-check" name="options6" id="option6-9" autocomplete="off">
+                        <label class="btn btn-secondary" for="option6-9">43</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option10" autocomplete="off">
-                        <label class="btn btn-secondary" for="option10">44</label>
+                        <input type="radio" class="btn-check" name="options6" id="option6-10" autocomplete="off">
+                        <label class="btn btn-secondary" for="option6-10">44</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option11" autocomplete="off">
-                        <label class="btn btn-secondary" for="option11">45</label>
+                        <input type="radio" class="btn-check" name="options6" id="option6-11" autocomplete="off">
+                        <label class="btn btn-secondary" for="option6-11">45</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option12" autocomplete="off">
-                        <label class="btn btn-secondary" for="option12">46</label>
+                        <input type="radio" class="btn-check" name="options6" id="option6-12" autocomplete="off">
+                        <label class="btn btn-secondary" for="option6-12">46</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option13" autocomplete="off">
-                        <label class="btn btn-secondary" for="option13">47</label>
+                        <input type="radio" class="btn-check" name="options6" id="option6-13" autocomplete="off">
+                        <label class="btn btn-secondary" for="option6-13">47</label>
                     </div>
 
                     <button class="add-to-cart btn btn-dark mb-4">ADD TO CART</button>
                 </div>
 
-
-
             </div>
 
             <div class="col-sm-8 col-md-3 m-1">
 
-                <img class="col-12 m-2 col-sm-12 m-sm-0" src="img/shoes/renew-elevate-2.jpg" alt="Shoes">
+                <img class="col-12 m-2 col-sm-12 m-sm-0" src="img/shoes/renew-elevate-2.jpg" alt="Shoes" loading="lazy">
 
                 <div class="shoe-description">
                     <h3>Nike Renew Elevate 2</h3>
                     <p> Price: <span>65$</span></p>
 
                     <div class="size-options">
-                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
-                        <label class="btn btn-secondary" for="option1">35</label>
+                        <input type="radio" class="btn-check" name="options7" id="option7-1" autocomplete="off" checked>
+                        <label class="btn btn-secondary" for="option7-1">35</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-                        <label class="btn btn-secondary" for="option2">36</label>
+                        <input type="radio" class="btn-check" name="options7" id="option7-2" autocomplete="off">
+                        <label class="btn btn-secondary" for="option7-2">36</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
-                        <label class="btn btn-secondary" for="option3">37</label>
+                        <input type="radio" class="btn-check" name="options7" id="option7-3" autocomplete="off">
+                        <label class="btn btn-secondary" for="option7-3">37</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
-                        <label class="btn btn-secondary" for="option4">38</label>
+                        <input type="radio" class="btn-check" name="options7" id="option7-4" autocomplete="off">
+                        <label class="btn btn-secondary" for="option7-4">38</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option5" autocomplete="off">
-                        <label class="btn btn-secondary" for="option5">39</label>
+                        <input type="radio" class="btn-check" name="options7" id="option7-5" autocomplete="off">
+                        <label class="btn btn-secondary" for="option7-5">39</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option6" autocomplete="off">
-                        <label class="btn btn-secondary" for="option6">40</label>
+                        <input type="radio" class="btn-check" name="options7" id="option7-6" autocomplete="off">
+                        <label class="btn btn-secondary" for="option7-6">40</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option7" autocomplete="off">
-                        <label class="btn btn-secondary" for="option7">41</label>
+                        <input type="radio" class="btn-check" name="options7" id="option7-7" autocomplete="off">
+                        <label class="btn btn-secondary" for="option7-7">41</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option8" autocomplete="off">
-                        <label class="btn btn-secondary" for="option8">42</label>
+                        <input type="radio" class="btn-check" name="options7" id="option7-8" autocomplete="off">
+                        <label class="btn btn-secondary" for="option7-8">42</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option9" autocomplete="off">
-                        <label class="btn btn-secondary" for="option9">43</label>
+                        <input type="radio" class="btn-check" name="options7" id="option7-9" autocomplete="off">
+                        <label class="btn btn-secondary" for="option7-9">43</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option10" autocomplete="off">
-                        <label class="btn btn-secondary" for="option10">44</label>
+                        <input type="radio" class="btn-check" name="options7" id="option7-10" autocomplete="off">
+                        <label class="btn btn-secondary" for="option7-10">44</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option11" autocomplete="off">
-                        <label class="btn btn-secondary" for="option11">45</label>
+                        <input type="radio" class="btn-check" name="options7" id="option7-11" autocomplete="off">
+                        <label class="btn btn-secondary" for="option7-11">45</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option12" autocomplete="off">
-                        <label class="btn btn-secondary" for="option12">46</label>
+                        <input type="radio" class="btn-check" name="options7" id="option7-12" autocomplete="off">
+                        <label class="btn btn-secondary" for="option7-12">46</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option13" autocomplete="off">
-                        <label class="btn btn-secondary" for="option13">47</label>
+                        <input type="radio" class="btn-check" name="options7" id="option7-13" autocomplete="off">
+                        <label class="btn btn-secondary" for="option7-13">47</label>
                     </div>
 
                     <button class="add-to-cart btn btn-dark mb-4">ADD TO CART</button>
@@ -937,51 +943,51 @@
 
             <div class="col-sm-8 col-md-3 m-1">
 
-                <img class="col-12 m-2 col-sm-12 m-sm-0" src="img/shoes/blazer-mid-77-vintage.jpg" alt="Shoes">
+                <img class="col-12 m-2 col-sm-12 m-sm-0" src="img/shoes/blazer-mid-77-vintage.jpg" alt="Shoes" loading="lazy">
 
                 <div class="shoe-description">
                     <h3>Nike Blazer Mid '77 Vintage</h3>
                     <p> Price: <span>110$</span></p>
 
                     <div class="size-options">
-                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
-                        <label class="btn btn-secondary" for="option1">35</label>
+                        <input type="radio" class="btn-check" name="options8" id="option8-1" autocomplete="off" checked>
+                        <label class="btn btn-secondary" for="option8-1">35</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-                        <label class="btn btn-secondary" for="option2">36</label>
+                        <input type="radio" class="btn-check" name="options8" id="option8-2" autocomplete="off">
+                        <label class="btn btn-secondary" for="option8-2">36</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
-                        <label class="btn btn-secondary" for="option3">37</label>
+                        <input type="radio" class="btn-check" name="options8" id="option8-3" autocomplete="off">
+                        <label class="btn btn-secondary" for="option8-3">37</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
-                        <label class="btn btn-secondary" for="option4">38</label>
+                        <input type="radio" class="btn-check" name="options8" id="option8-4" autocomplete="off">
+                        <label class="btn btn-secondary" for="option8-4">38</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option5" autocomplete="off">
-                        <label class="btn btn-secondary" for="option5">39</label>
+                        <input type="radio" class="btn-check" name="options8" id="option8-5" autocomplete="off">
+                        <label class="btn btn-secondary" for="option8-5">39</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option6" autocomplete="off">
-                        <label class="btn btn-secondary" for="option6">40</label>
+                        <input type="radio" class="btn-check" name="options8" id="option8-6" autocomplete="off">
+                        <label class="btn btn-secondary" for="option8-6">40</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option7" autocomplete="off">
-                        <label class="btn btn-secondary" for="option7">41</label>
+                        <input type="radio" class="btn-check" name="options8" id="option8-7" autocomplete="off">
+                        <label class="btn btn-secondary" for="option8-7">41</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option8" autocomplete="off">
-                        <label class="btn btn-secondary" for="option8">42</label>
+                        <input type="radio" class="btn-check" name="options8" id="option8-8" autocomplete="off">
+                        <label class="btn btn-secondary" for="option8-8">42</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option9" autocomplete="off">
-                        <label class="btn btn-secondary" for="option9">43</label>
+                        <input type="radio" class="btn-check" name="options8" id="option8-9" autocomplete="off">
+                        <label class="btn btn-secondary" for="option8-9">43</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option10" autocomplete="off">
-                        <label class="btn btn-secondary" for="option10">44</label>
+                        <input type="radio" class="btn-check" name="options8" id="option8-10" autocomplete="off">
+                        <label class="btn btn-secondary" for="option8-10">44</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option11" autocomplete="off">
-                        <label class="btn btn-secondary" for="option11">45</label>
+                        <input type="radio" class="btn-check" name="options8" id="option8-11" autocomplete="off">
+                        <label class="btn btn-secondary" for="option8-11">45</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option12" autocomplete="off">
-                        <label class="btn btn-secondary" for="option12">46</label>
+                        <input type="radio" class="btn-check" name="options8" id="option8-12" autocomplete="off">
+                        <label class="btn btn-secondary" for="option8-12">46</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option13" autocomplete="off">
-                        <label class="btn btn-secondary" for="option13">47</label>
+                        <input type="radio" class="btn-check" name="options8" id="option8-13" autocomplete="off">
+                        <label class="btn btn-secondary" for="option8-13">47</label>
                     </div>
 
                     <button class="add-to-cart btn btn-dark mb-4">ADD TO CART</button>
@@ -991,163 +997,161 @@
 
             <div class="col-sm-8 col-md-3 m-1">
 
-                <img class="col-12 m-2 col-sm-12 m-sm-0" src="img/shoes/air-zoom-pegasus-38.jpg" alt="Shoes">
+                <img class="col-12 m-2 col-sm-12 m-sm-0" src="img/shoes/air-zoom-pegasus-38.jpg" alt="Shoes" loading="lazy">
 
                 <div class="shoe-description">
                     <h3>Nike Air Zoom Pegasus 38</h3>
                     <p> Price: <span>180$</span></p>
 
                     <div class="size-options">
-                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
-                        <label class="btn btn-secondary" for="option1">35</label>
+                        <input type="radio" class="btn-check" name="options9" id="option9-1" autocomplete="off" checked>
+                        <label class="btn btn-secondary" for="option9-1">35</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-                        <label class="btn btn-secondary" for="option2">36</label>
+                        <input type="radio" class="btn-check" name="options9" id="option9-2" autocomplete="off">
+                        <label class="btn btn-secondary" for="option9-2">36</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
-                        <label class="btn btn-secondary" for="option3">37</label>
+                        <input type="radio" class="btn-check" name="options9" id="option9-3" autocomplete="off">
+                        <label class="btn btn-secondary" for="option9-3">37</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
-                        <label class="btn btn-secondary" for="option4">38</label>
+                        <input type="radio" class="btn-check" name="options9" id="option9-4" autocomplete="off">
+                        <label class="btn btn-secondary" for="option9-4">38</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option5" autocomplete="off">
-                        <label class="btn btn-secondary" for="option5">39</label>
+                        <input type="radio" class="btn-check" name="options9" id="option9-5" autocomplete="off">
+                        <label class="btn btn-secondary" for="option9-5">39</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option6" autocomplete="off">
-                        <label class="btn btn-secondary" for="option6">40</label>
+                        <input type="radio" class="btn-check" name="options9" id="option9-6" autocomplete="off">
+                        <label class="btn btn-secondary" for="option9-6">40</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option7" autocomplete="off">
-                        <label class="btn btn-secondary" for="option7">41</label>
+                        <input type="radio" class="btn-check" name="options9" id="option9-7" autocomplete="off">
+                        <label class="btn btn-secondary" for="option9-7">41</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option8" autocomplete="off">
-                        <label class="btn btn-secondary" for="option8">42</label>
+                        <input type="radio" class="btn-check" name="options9" id="option9-8" autocomplete="off">
+                        <label class="btn btn-secondary" for="option9-8">42</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option9" autocomplete="off">
-                        <label class="btn btn-secondary" for="option9">43</label>
+                        <input type="radio" class="btn-check" name="options9" id="option9-9" autocomplete="off">
+                        <label class="btn btn-secondary" for="option9-9">43</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option10" autocomplete="off">
-                        <label class="btn btn-secondary" for="option10">44</label>
+                        <input type="radio" class="btn-check" name="options9" id="option9-10" autocomplete="off">
+                        <label class="btn btn-secondary" for="option9-10">44</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option11" autocomplete="off">
-                        <label class="btn btn-secondary" for="option11">45</label>
+                        <input type="radio" class="btn-check" name="options9" id="option9-11" autocomplete="off">
+                        <label class="btn btn-secondary" for="option9-11">45</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option12" autocomplete="off">
-                        <label class="btn btn-secondary" for="option12">46</label>
+                        <input type="radio" class="btn-check" name="options9" id="option9-12" autocomplete="off">
+                        <label class="btn btn-secondary" for="option9-12">46</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option13" autocomplete="off">
-                        <label class="btn btn-secondary" for="option13">47</label>
+                        <input type="radio" class="btn-check" name="options9" id="option9-13" autocomplete="off">
+                        <label class="btn btn-secondary" for="option9-13">47</label>
                     </div>
 
                     <button class="add-to-cart btn btn-dark mb-4">ADD TO CART</button>
                 </div>
 
-
-
             </div>
 
             <div class="col-sm-8 col-md-3 m-1">
 
-                <img class="col-12 m-2 col-sm-12 m-sm-0" src="img/shoes/air-max-genome.jpg" alt="Shoes">
+                <img class="col-12 m-2 col-sm-12 m-sm-0" src="img/shoes/air-max-genome.jpg" alt="Shoes" loading="lazy">
 
                 <div class="shoe-description">
                     <h3>Nike Air Max Genome</h3>
                     <p> Price: <span>170$</span></p>
 
                     <div class="size-options">
-                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
-                        <label class="btn btn-secondary" for="option1">35</label>
+                        <input type="radio" class="btn-check" name="options10" id="option10-1" autocomplete="off"
+                            checked>
+                        <label class="btn btn-secondary" for="option10-1">35</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-                        <label class="btn btn-secondary" for="option2">36</label>
+                        <input type="radio" class="btn-check" name="options10" id="option10-2" autocomplete="off">
+                        <label class="btn btn-secondary" for="option10-2">36</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
-                        <label class="btn btn-secondary" for="option3">37</label>
+                        <input type="radio" class="btn-check" name="options10" id="option10-3" autocomplete="off">
+                        <label class="btn btn-secondary" for="option10-3">37</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
-                        <label class="btn btn-secondary" for="option4">38</label>
+                        <input type="radio" class="btn-check" name="options10" id="option10-4" autocomplete="off">
+                        <label class="btn btn-secondary" for="option10-4">38</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option5" autocomplete="off">
-                        <label class="btn btn-secondary" for="option5">39</label>
+                        <input type="radio" class="btn-check" name="options10" id="option10-5" autocomplete="off">
+                        <label class="btn btn-secondary" for="option10-5">39</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option6" autocomplete="off">
-                        <label class="btn btn-secondary" for="option6">40</label>
+                        <input type="radio" class="btn-check" name="options10" id="option10-6" autocomplete="off">
+                        <label class="btn btn-secondary" for="option10-6">40</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option7" autocomplete="off">
-                        <label class="btn btn-secondary" for="option7">41</label>
+                        <input type="radio" class="btn-check" name="options10" id="option10-7" autocomplete="off">
+                        <label class="btn btn-secondary" for="option10-7">41</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option8" autocomplete="off">
-                        <label class="btn btn-secondary" for="option8">42</label>
+                        <input type="radio" class="btn-check" name="options10" id="option10-8" autocomplete="off">
+                        <label class="btn btn-secondary" for="option10-8">42</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option9" autocomplete="off">
-                        <label class="btn btn-secondary" for="option9">43</label>
+                        <input type="radio" class="btn-check" name="options10" id="option10-9" autocomplete="off">
+                        <label class="btn btn-secondary" for="option10-9">43</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option10" autocomplete="off">
-                        <label class="btn btn-secondary" for="option10">44</label>
+                        <input type="radio" class="btn-check" name="options10" id="option10-10" autocomplete="off">
+                        <label class="btn btn-secondary" for="option10-10">44</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option11" autocomplete="off">
-                        <label class="btn btn-secondary" for="option11">45</label>
+                        <input type="radio" class="btn-check" name="options10" id="option10-11" autocomplete="off">
+                        <label class="btn btn-secondary" for="option10-11">45</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option12" autocomplete="off">
-                        <label class="btn btn-secondary" for="option12">46</label>
+                        <input type="radio" class="btn-check" name="options10" id="option10-12" autocomplete="off">
+                        <label class="btn btn-secondary" for="option10-12">46</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option13" autocomplete="off">
-                        <label class="btn btn-secondary" for="option13">47</label>
+                        <input type="radio" class="btn-check" name="options10" id="option10-13" autocomplete="off">
+                        <label class="btn btn-secondary" for="option10-13">47</label>
                     </div>
 
                     <button class="add-to-cart btn btn-dark mb-4">ADD TO CART</button>
                 </div>
 
-
-
             </div>
 
             <div class="col-sm-8 col-md-3 m-1">
 
-                <img class="col-12 m-2 col-sm-12 m-sm-0" src="img/shoes/air-huarache.jpg" alt="Shoes">
+                <img class="col-12 m-2 col-sm-12 m-sm-0" src="img/shoes/air-huarache.jpg" alt="Shoes" loading="lazy">
 
                 <div class="shoe-description">
                     <h3>Nike Air Huarache</h3>
                     <p> Price: <span>130$</span></p>
 
                     <div class="size-options">
-                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
-                        <label class="btn btn-secondary" for="option1">35</label>
+                        <input type="radio" class="btn-check" name="options11" id="option11-1" autocomplete="off"
+                            checked>
+                        <label class="btn btn-secondary" for="option11-1">35</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-                        <label class="btn btn-secondary" for="option2">36</label>
+                        <input type="radio" class="btn-check" name="options11" id="option11-2" autocomplete="off">
+                        <label class="btn btn-secondary" for="option11-2">36</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
-                        <label class="btn btn-secondary" for="option3">37</label>
+                        <input type="radio" class="btn-check" name="options11" id="option11-3" autocomplete="off">
+                        <label class="btn btn-secondary" for="option11-3">37</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
-                        <label class="btn btn-secondary" for="option4">38</label>
+                        <input type="radio" class="btn-check" name="options11" id="option11-4" autocomplete="off">
+                        <label class="btn btn-secondary" for="option11-4">38</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option5" autocomplete="off">
-                        <label class="btn btn-secondary" for="option5">39</label>
+                        <input type="radio" class="btn-check" name="options11" id="option11-5" autocomplete="off">
+                        <label class="btn btn-secondary" for="option11-5">39</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option6" autocomplete="off">
-                        <label class="btn btn-secondary" for="option6">40</label>
+                        <input type="radio" class="btn-check" name="options11" id="option11-6" autocomplete="off">
+                        <label class="btn btn-secondary" for="option11-6">40</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option7" autocomplete="off">
-                        <label class="btn btn-secondary" for="option7">41</label>
+                        <input type="radio" class="btn-check" name="options11" id="option11-7" autocomplete="off">
+                        <label class="btn btn-secondary" for="option11-7">41</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option8" autocomplete="off">
-                        <label class="btn btn-secondary" for="option8">42</label>
+                        <input type="radio" class="btn-check" name="options11" id="option11-8" autocomplete="off">
+                        <label class="btn btn-secondary" for="option11-8">42</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option9" autocomplete="off">
-                        <label class="btn btn-secondary" for="option9">43</label>
+                        <input type="radio" class="btn-check" name="options11" id="option11-9" autocomplete="off">
+                        <label class="btn btn-secondary" for="option11-9">43</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option10" autocomplete="off">
-                        <label class="btn btn-secondary" for="option10">44</label>
+                        <input type="radio" class="btn-check" name="options11" id="option11-10" autocomplete="off">
+                        <label class="btn btn-secondary" for="option11-10">44</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option11" autocomplete="off">
-                        <label class="btn btn-secondary" for="option11">45</label>
+                        <input type="radio" class="btn-check" name="options11" id="option11-11" autocomplete="off">
+                        <label class="btn btn-secondary" for="option11-11">45</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option12" autocomplete="off">
-                        <label class="btn btn-secondary" for="option12">46</label>
+                        <input type="radio" class="btn-check" name="options11" id="option11-12" autocomplete="off">
+                        <label class="btn btn-secondary" for="option11-12">46</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option13" autocomplete="off">
-                        <label class="btn btn-secondary" for="option13">47</label>
+                        <input type="radio" class="btn-check" name="options11" id="option11-13" autocomplete="off">
+                        <label class="btn btn-secondary" for="option11-13">47</label>
                     </div>
 
                     <button class="add-to-cart btn btn-dark mb-4">ADD TO CART</button>
@@ -1157,61 +1161,60 @@
 
             <div class="col-sm-8 col-md-3 m-1">
 
-                <img class="col-12 m-2 col-sm-12 m-sm-0" src="img/shoes/metcon-7-mat-fraser-pe.jpg" alt="Shoes">
+                <img class="col-12 m-2 col-sm-12 m-sm-0" src="img/shoes/metcon-7-mat-fraser-pe.jpg" alt="Shoes" loading="lazy">
 
                 <div class="shoe-description">
                     <h3>Nike Metcon 7 Mat Fraser PE</h3>
                     <p> Price: <span>140$</span></p>
 
                     <div class="size-options">
-                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
-                        <label class="btn btn-secondary" for="option1">35</label>
+                        <input type="radio" class="btn-check" name="options12" id="option12-1" autocomplete="off"
+                            checked>
+                        <label class="btn btn-secondary" for="option12-1">35</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-                        <label class="btn btn-secondary" for="option2">36</label>
+                        <input type="radio" class="btn-check" name="options12" id="option12-2" autocomplete="off">
+                        <label class="btn btn-secondary" for="option12-2">36</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
-                        <label class="btn btn-secondary" for="option3">37</label>
+                        <input type="radio" class="btn-check" name="options12" id="option12-3" autocomplete="off">
+                        <label class="btn btn-secondary" for="option12-3">37</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
-                        <label class="btn btn-secondary" for="option4">38</label>
+                        <input type="radio" class="btn-check" name="options12" id="option12-4" autocomplete="off">
+                        <label class="btn btn-secondary" for="option12-4">38</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option5" autocomplete="off">
-                        <label class="btn btn-secondary" for="option5">39</label>
+                        <input type="radio" class="btn-check" name="options12" id="option12-5" autocomplete="off">
+                        <label class="btn btn-secondary" for="option12-5">39</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option6" autocomplete="off">
-                        <label class="btn btn-secondary" for="option6">40</label>
+                        <input type="radio" class="btn-check" name="options12" id="option12-6" autocomplete="off">
+                        <label class="btn btn-secondary" for="option12-6">40</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option7" autocomplete="off">
-                        <label class="btn btn-secondary" for="option7">41</label>
+                        <input type="radio" class="btn-check" name="options12" id="option12-7" autocomplete="off">
+                        <label class="btn btn-secondary" for="option12-7">41</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option8" autocomplete="off">
-                        <label class="btn btn-secondary" for="option8">42</label>
+                        <input type="radio" class="btn-check" name="options12" id="option12-8" autocomplete="off">
+                        <label class="btn btn-secondary" for="option12-8">42</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option9" autocomplete="off">
-                        <label class="btn btn-secondary" for="option9">43</label>
+                        <input type="radio" class="btn-check" name="options12" id="option12-9" autocomplete="off">
+                        <label class="btn btn-secondary" for="option12-9">43</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option10" autocomplete="off">
-                        <label class="btn btn-secondary" for="option10">44</label>
+                        <input type="radio" class="btn-check" name="options12" id="option12-10" autocomplete="off">
+                        <label class="btn btn-secondary" for="option12-10">44</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option11" autocomplete="off">
-                        <label class="btn btn-secondary" for="option11">45</label>
+                        <input type="radio" class="btn-check" name="options12" id="option12-11" autocomplete="off">
+                        <label class="btn btn-secondary" for="option12-11">45</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option12" autocomplete="off">
-                        <label class="btn btn-secondary" for="option12">46</label>
+                        <input type="radio" class="btn-check" name="options12" id="option12-12" autocomplete="off">
+                        <label class="btn btn-secondary" for="option12-12">46</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option13" autocomplete="off">
-                        <label class="btn btn-secondary" for="option13">47</label>
+                        <input type="radio" class="btn-check" name="options12" id="option12-13" autocomplete="off">
+                        <label class="btn btn-secondary" for="option12-13">47</label>
                     </div>
-                    
+
                     <button class="add-to-cart btn btn-dark mb-4">ADD TO CART</button>
                 </div>
 
             </div>
 
-
         </div>
-
 
     </section>
 
@@ -1230,7 +1233,6 @@
                     </svg>
                 </a>
 
-
                 <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/nike" role="button"><svg
                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                         class="bi bi-twitter" viewBox="0 0 16 16">
@@ -1239,7 +1241,6 @@
                  6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632
                   3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
                     </svg></a>
-
 
                 <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/nike/"
                     role="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
@@ -1255,7 +1256,6 @@
                        2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24
                         1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
                     </svg></a>
-
             </section>
 
         </div>
@@ -1266,7 +1266,6 @@
         </div>
 
     </footer>
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
