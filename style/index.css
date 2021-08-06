@@ -1,0 +1,130 @@
+a.nav-link{
+    font-size: 1.5em;
+    padding-right: 10%;
+}
+
+.bg-light {
+    background-color: #adadad44!important;
+}
+
+body > section > h2{
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 20px;
+    text-transform: uppercase;
+}
+#lblCartCount {
+    font-size: 12px;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -5px;
+    margin-bottom: 20px;
+}
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+
+.nav-link:focus, .nav-link:hover {
+    color:#000000;
+}
+
+.fa{
+    color: #000;
+    
+
+}
+
+#navbarDropdownMenuLink{
+    align-items: center;
+}
+
+#login-link{
+    color: #000;
+    text-decoration: none;
+}
+
+.justify-content-end{
+    margin-right: 2em;
+}
+
+.dropdown-menu{
+    margin-right: 5em;
+}
+
+.moment-desc{
+    font-size: 1.3em;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.slide-buttons{
+    background-color: #000000;
+    opacity: 0.5;
+}
+
+.shoe-description{
+    text-align: center;
+}
+
+.shoe-description p {
+    font-size: 22px;
+}
+
+.size-options label{
+    background-color: #6e6c6c;
+    margin-bottom: 2px;
+}
+
+.size-options{
+    margin-bottom: 15px;
+}
+
+.size-options label:hover{
+    background-color: rgb(45, 46, 46);
+}
+
+.btn-check:active + .btn-secondary, .btn-check:checked + .btn-secondary, .btn-secondary.active, .btn-secondary:active, .show > .btn-secondary.dropdown-toggle{
+    background-color: rgb(12, 12, 12);
+    border-color: rgb(13, 13, 15);
+
+}
+
+#shoe-cart{
+    width: 300px;
+    margin-top: 45px;
+    margin-right: -100px;
+   
+}
+
+#buy-from-mini-cart{
+    margin-left: 100px;
+
+}
+
+.shoe-info{
+    text-align: center;
+}
+
+.shoe-info span{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.shoe-info p{
+    margin-top: 4px;
+    margin-bottom: -2px;
+}
+
+.shoe-info .btn{
+    margin-top: 10px;
+}
+
+
+
+
