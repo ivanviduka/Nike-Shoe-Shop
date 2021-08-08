@@ -17,9 +17,6 @@ function addToCart(event) {
 
     event.preventDefault();
     event.target.setAttribute("disabled", "true");
-    event.target.id = Date.now().toString();
-
-
     document.getElementById("buy-from-mini-cart").removeAttribute("disabled");
 
     let selectedProduct = event.target.parentNode;

@@ -236,7 +236,7 @@ $momentsResut = $momentsTable->getMoments();
 
                     
 
-                        <button class="add-to-cart btn btn-dark mb-4">ADD TO CART</button>
+                        <button id="<?=$row["ID"]?>" class="add-to-cart btn btn-dark mb-4">ADD TO CART</button>
 
                     </div>
 
