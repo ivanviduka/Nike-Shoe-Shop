@@ -4,16 +4,12 @@ if (isset($_COOKIE["userIsLoggedIn"])) {
     header("Location: ./index.php");
 }
 
+session_start();
 require_once("./dbconfig.php");
 require_once("./users/UsersTable.php");
 $errorMsg = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    function alert($message)
-    {
-        echo "<script>alert('$message');</script>";
-    }
 
     $firstName = $_POST["first-name"];
     $lastName = $_POST["last-name"];
@@ -28,14 +24,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($password === $confirmPassword) {
             $usersTable->registerUser($firstName, $lastName, $email, $password);
             header("Location: ./login.php");
-
         } else {
-            $errorMsg = "Passwords don't match";
-            alert($errorMsg);
+            $errorMsg = "Password and confirm password do not match";
+            $_SESSION['error'] = $errorMsg;
         }
     } else {
         $errorMsg = "One or more inputs is invalid";
-        alert($errorMsg);
+        $_SESSION['error'] = $errorMsg;
     }
 }
 ?>
@@ -85,15 +80,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="container">
             <div class="row">
                 <div class="col-md-4 offset-md-4">
+
+                    <?php
+                    if (isset($_SESSION["error"])) {
+                        $error = $_SESSION["error"];
+                        echo "<div class=\"alert alert-danger\" role=\"alert\" style=\"text-align: center;\">$error</div>";
+                    }
+                    ?>
                     <div class="login-form mt-4 p-4">
                         <form action="" method="POST" class="row g-3">
                             <h4 style="text-align: center;">Register</h4>
                             <div class="col-12">
-                                <input type="text" name="first-name" class="form-control" placeholder="Enter your first name" required>
+                                <input type="text" name="first-name" pattern="[a-zA-Z]*" class="form-control" placeholder="Enter your first name" required>
                             </div>
 
                             <div class="col-12">
-                                <input type="text" name="last-name" class="form-control" placeholder="Enter your last name" required>
+                                <input type="text" name="last-name" pattern="[a-zA-Z]*" class="form-control" placeholder="Enter your last name" required>
                             </div>
 
                             <div class="col-12">
@@ -168,3 +170,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 
 </html>
+
+<?php
+unset($_SESSION["error"]);
+?>

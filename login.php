@@ -12,11 +12,6 @@ $errorMsg = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    function alert($message)
-    {
-        echo "<script>alert('$message');</script>";
-    }
-
     $email = $_POST["email"];
     $password = $_POST["password"];
 
@@ -24,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $usersTable = new UsersTable();
         $result = $usersTable->getUser($email);
 
-        if ($result->rowCount()) { 
+        if ($result->rowCount()) {
             $user = $result->fetch();
             if (md5($password) == $user["password"]) {
                 setcookie("userIsLoggedIn", true);
@@ -32,19 +27,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("Location: ./index.php");
             } else {
                 $errorMsg = "Password is invalid";
-                alert($errorMsg);
+                $_SESSION['error'] = $errorMsg;
             }
         } else {
             $errorMsg = "No user found with entered email";
-            alert($errorMsg);
-
+            $_SESSION['error'] = $errorMsg;
         }
     } else {
         $errorMsg = "Email invalid";
-        header("Location: ./login.php");
-        alert($errorMsg);
+        $_SESSION['error'] = $errorMsg;
     }
-
 }
 ?>
 
@@ -84,15 +76,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </div>
 
-        
+
             </div>
         </nav>
 
     </header>
 
+
     <div class="container">
         <div class="row">
             <div class="col-md-4 offset-md-4">
+
+                <?php
+                if (isset($_SESSION["error"])) {
+                    $error = $_SESSION["error"];
+                    echo "<div class=\"alert alert-danger\" role=\"alert\" style=\"text-align: center;\">$error</div>";
+                }
+                ?>
+
                 <div class="login-form mt-4 p-4">
 
                     <form action="" method="POST" class="row g-3">
@@ -165,3 +166,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 
 </html>
+
+<?php
+unset($_SESSION["error"]);
+?>
