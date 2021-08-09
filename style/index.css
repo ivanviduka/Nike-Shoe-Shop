@@ -41,6 +41,9 @@ body > section > h2{
 
 }
 
+#cart-icon{
+    margin-top: 10px;
+}
 #navbarDropdownMenuLink{
     align-items: center;
 }
@@ -48,6 +51,39 @@ body > section > h2{
 #login-link{
     color: #000;
     text-decoration: none;
+}
+
+#logout-link {
+    color: #000;
+    text-decoration: none;
+}
+
+#see-orders {
+    color: #000;
+    text-decoration: none;
+}
+
+#see-orders:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+#orders:hover #see-orders{
+    color: #fff;
+}
+
+#logout-button{
+    border: 0px;
+    margin-bottom: 5px;
+}
+
+#user-logged-in {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#user-email{
+    font-weight: 600;
 }
 
 .justify-content-end{
@@ -97,13 +133,13 @@ body > section > h2{
 
 #shoe-cart{
     width: 300px;
-    margin-top: 45px;
+    margin-top: 70px;
     margin-right: -100px;
    
 }
 
 #buy-from-mini-cart{
-    margin-left: 100px;
+    margin-left: 80px;
 
 }
 
@@ -125,6 +161,12 @@ body > section > h2{
     margin-top: 10px;
 }
 
+@media only screen and (max-width: 550px) {
+    #cart-and-login {
+        margin-left: auto;
+        margin-right: auto;
+    }
+  }
 
 
 
