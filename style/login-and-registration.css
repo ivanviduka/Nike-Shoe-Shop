@@ -1,0 +1,33 @@
+.bg-light {
+    background-color: #adadad44!important;
+}
+
+p {
+    color: rgb(87, 85, 85);
+}
+
+a{
+    color: #000;
+}
+
+.container{
+    margin-top: 100px;
+}
+
+.login-form{
+    background-color: rgb(214, 206, 206);
+    padding-bottom: 20px;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+body > footer > div.container.p-1.pb-0 {
+    margin-top: 10px;
+}
+
