@@ -41,6 +41,22 @@ class UsersTable
         }
     }
 
+    public function getTakenEmails(){
+        $sql = <<<EOSQL
+            SELECT email FROM $this->tableName;
+        EOSQL;
+
+        $query = $this->conn->prepare($sql);
+
+        try {
+            $query->execute();
+            $query->setFetchMode(PDO::FETCH_ASSOC);
+            return $query;
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
     public function registerUser($first_name, $last_name, $email, $password)
     {
         $todoTask = array(

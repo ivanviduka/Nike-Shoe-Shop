@@ -19,14 +19,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (filter_var($firstName, FILTER_SANITIZE_STRING) && filter_var($lastName, FILTER_SANITIZE_STRING) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $usersTable = new UsersTable();
-        $result = $usersTable->getUser($email);
+        $result = $usersTable->getTakenEmails();
+        $uniqueEmail = true;
 
-        if ($password === $confirmPassword) {
-            $usersTable->registerUser($firstName, $lastName, $email, $password);
-            header("Location: ./login.php");
-        } else {
-            $errorMsg = "Password and confirm password do not match";
-            $_SESSION['error'] = $errorMsg;
+        while ($currentEmail = $result->fetch()) {
+            if ($currentEmail["email"] == $email) {
+                $errorMsg = "This email already exist";
+                $_SESSION['error'] = $errorMsg;
+                $uniqueEmail = false;
+                break;
+            }
+        }
+
+        if ($uniqueEmail) {
+            if ($password === $confirmPassword) {
+                $usersTable->registerUser($firstName, $lastName, $email, $password);
+                header("Location: ./login.php");
+            } else {
+                $errorMsg = "Password and confirm password do not match";
+                $_SESSION['error'] = $errorMsg;
+            }
         }
     } else {
         $errorMsg = "One or more inputs is invalid";
