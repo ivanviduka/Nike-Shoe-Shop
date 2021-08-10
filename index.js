@@ -7,10 +7,10 @@ window.onload = (event) => {
         button.addEventListener('click', addToCart);
     })
 
-    if(document.querySelector(".selected-shoes-list").getElementsByTagName("li").length == 0){
+    if (document.querySelector(".selected-shoes-list").getElementsByTagName("li").length == 0) {
         document.getElementById("buy-from-mini-cart").setAttribute("disabled", "true");
     }
-    
+
 };
 
 function addToCart(event) {
@@ -33,7 +33,7 @@ function addToCart(event) {
             break;
         }
     }
-    
+
     let selectedShoeImg = parentElement.firstElementChild.src;
 
     let list = document.querySelector(".selected-shoes-list");
@@ -45,16 +45,20 @@ function addToCart(event) {
         name: selectedShoeName.innerHTML,
         img: selectedShoeImg,
         price: parseInt(selectedShoePrice.innerHTML),
-        quantity: parseInt(selectedShoeSize)
+        shoeSize: parseInt(selectedShoeSize)
     }
 
     cartItems.push(newItem);
 
-    
- 
+
+
     li.className = "row";
     li.innerHTML =
-        `
+        `<input type='hidden' name="shoesArray[${listSize}][ID]" value="${newItem.id}"/>
+        <input type='hidden' name="shoesArray[${listSize}][name]" value="${newItem.name}"/>
+        <input type='hidden' name="shoesArray[${listSize}][imgURL]" value="${newItem.img}"/>
+        <input type='hidden' name="shoesArray[${listSize}][price]" value="${newItem.price}"/>
+        <input type='hidden' name="shoesArray[${listSize}][shoeSize]" value="${newItem.shoeSize}"/>
         <img src=${selectedShoeImg} alt="Selected Shoes" loading="lazy"
             width="100%" height="80%">
 
@@ -92,7 +96,7 @@ function removeFromCart(event) {
     let shoppingCartCount = document.querySelector('#lblCartCount');
     shoppingCartCount.innerHTML = cartItems.length;
 
-    if(document.querySelector(".selected-shoes-list").getElementsByTagName("li").length == 0){
+    if (document.querySelector(".selected-shoes-list").getElementsByTagName("li").length == 0) {
         document.getElementById("buy-from-mini-cart").setAttribute("disabled", "true");
     }
 
