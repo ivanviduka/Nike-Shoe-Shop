@@ -1,8 +1,11 @@
 <?php
 
 session_start();
+require_once("./dbconfig.php");
+require_once("./OrdersTable.php");
 $priceTotal = 0;
 $orderText = "";
+
 
 
 
@@ -12,19 +15,44 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (isset($_POST['go-to-cart-page'])) {
         $productsFromMiniCart = $_POST["shoesArray"];
-
+        $_SESSION['arrayInfo'] = $productsFromMiniCart;
         if (empty($productsFromMiniCart)) {
             header("Location: ./index.php");
         }
 
         foreach ($productsFromMiniCart as $currentProduct) {
             $priceTotal += $currentProduct["price"];
-            $orderText = $orderText . "Shoes: " . $currentProduct["name"] . "\t" . "Size: " . $currentProduct["shoeSize"] . nl2br("\n");
+            $orderText = $orderText . "Shoes: " . $currentProduct["name"] . "  Size: " . $currentProduct["shoeSize"] . nl2br("\n");
+            $_SESSION['totalPrice'] = $priceTotal;
+            $_SESSION['orderInfo'] = $orderText;
         }
     }
 
     if (isset($_POST['create-order'])) {
-        header("Location: ./login.php");
+
+        $productsFromMiniCart = $_SESSION['arrayInfo'];
+        $priceTotal = $_SESSION['totalPrice'];
+        $orderText = $_SESSION['orderInfo'];
+
+
+        $city = $_POST["city"];
+        $address = $_POST["address"];
+        $phone = $_POST["phone-number"];
+        $email = $_POST["email"];
+        $price = $_POST["total-price"];
+        $order_info = $_POST["order-info"];
+
+        if (
+            filter_var($city, FILTER_SANITIZE_STRING) && !filter_var((int)$city, FILTER_VALIDATE_INT) && filter_var($address, FILTER_SANITIZE_STRING) && filter_var($email, FILTER_VALIDATE_EMAIL)
+            && filter_var((int)$phone, FILTER_VALIDATE_INT) && ((int)$phone != 0) && filter_var($price, FILTER_VALIDATE_INT) && filter_var($order_info, FILTER_SANITIZE_STRING)
+        ) {
+            $ordersTable = new OrdersTable();
+            $ordersTable->createOrder($city, $address, $phone, $email, $price, $order_info);
+            header("Location: ./index.php");
+        } else {
+            $errorMsg = "One or more inputs is invalid";
+            $_SESSION['error'] = $errorMsg;
+        }
     }
 }
 
@@ -152,11 +180,18 @@ if (isset($_GET["logout"])) {
                 <p id="total-price"> Total Price: <?= htmlspecialchars($priceTotal) ?>$</p>
             </div>
 
-            
+
         </div>
 
         <div class="order-info container shadow-lg p-3 mb-5 bg-body rounded">
             <h2>CREATE ORDER</h2>
+
+            <?php
+            if (isset($_SESSION["error"])) {
+                $error = $_SESSION["error"];
+                echo "<div class=\"alert alert-danger\" role=\"alert\" style=\"text-align: center;\">$error</div>";
+            }
+            ?>
 
             <form class="order-form" method="POST">
                 <div class="mb-3">
@@ -170,7 +205,7 @@ if (isset($_GET["logout"])) {
                 </div>
                 <div class="mb-3">
                     <label for="user-phone-number" class="form-label">Phone number</label>
-                    <input type="text" name="phone-number" class="form-control" id="user-phone-number" aria-label="Enter your phone number" required>
+                    <input type="tel" name="phone-number" class="form-control" id="user-phone-number" aria-label="Enter your phone number" required>
                 </div>
 
                 <?php if (isset($_COOKIE["userIsLoggedIn"])) : ?>
@@ -240,3 +275,7 @@ if (isset($_GET["logout"])) {
 </body>
 
 </html>
+
+<?php
+unset($_SESSION["error"]);
+?>

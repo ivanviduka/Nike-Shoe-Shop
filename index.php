@@ -320,3 +320,8 @@ $momentsResut = $momentsTable->getMoments();
 </body>
 
 </html>
+
+<?php
+unset($_SESSION["totalPrice"]);
+unset($_SESSION["orderInfo"]);
+?>
