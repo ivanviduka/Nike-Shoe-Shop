@@ -77,7 +77,7 @@ $momentsResut = $momentsTable->getMoments();
 
                                 </ul>
 
-                                <input id="buy-from-mini-cart" class="btn btn-dark" type="submit" value="BUY NOW" aria-label="Purchase items from cart">
+                                <input id="buy-from-mini-cart" class="btn btn-dark" name="go-to-cart-page" type="submit" value="BUY NOW" aria-label="Purchase items from cart">
                             </form>
 
                         </div>
@@ -92,7 +92,7 @@ $momentsResut = $momentsTable->getMoments();
                             <a id="logout-link" href="./index.php?logout=true">
                                 <i class="fa fa-user" aria-hidden="true"></i> SIGN OUT
                             </a>
-                            <p id="user-email"><?= $_SESSION["email"] ?></p>
+                            <p id="user-email"><?= htmlspecialchars($_SESSION["email"]) ?></p>
                         </div>
 
                         <div id="orders" class="align-self-center ms-3">
@@ -112,23 +112,6 @@ $momentsResut = $momentsTable->getMoments();
 
 
                     <?php endif; ?>
-
-                    <!--
-
-                    <div id="user-logged-out" class="align-self-center">
-                        <a id="login-link" href="./login.php">
-                            <i class="fa fa-user" aria-hidden="true"></i> SIGN IN
-                        </a>
-                    </div>
-
-                    <div id="user-logged-in" class="align-self-center">
-                        <a id="logout-link" href="">
-                            <i class="fa fa-user" aria-hidden="true"></i> SIGN OUT
-                        </a>
-                        <p id="user-email"></p>
-                    </div>
-                    -->
-
 
                 </div>
             </div>
@@ -278,7 +261,7 @@ $momentsResut = $momentsTable->getMoments();
 
 
 
-                        <button id="<?= $row["ID"] ?>" class="add-to-cart btn btn-dark mb-4">ADD TO CART</button>
+                        <button id="<?= htmlspecialchars($row["ID"]) ?>" class="add-to-cart btn btn-dark mb-4">ADD TO CART</button>
 
                     </div>
 
