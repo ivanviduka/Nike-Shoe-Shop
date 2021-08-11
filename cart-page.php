@@ -48,6 +48,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ) {
             $ordersTable = new OrdersTable();
             $ordersTable->createOrder($city, $address, $phone, $email, $price, $order_info);
+            $successMsg = "Your order has been received";
+            $_SESSION['success'] = $successMsg;
             header("Location: ./index.php");
         } else {
             $errorMsg = "One or more inputs is invalid";
@@ -57,9 +59,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 if (isset($_GET["logout"])) {
+    
+    unset($_SESSION["email"]);
+    setcookie("user-logout", true);
     setcookie("userIsLoggedIn", 0, time() - 3600);
+    header("Location: ./cart-page.php");
+}
+
+if (isset($_COOKIE["user-logout"])) {
+
+    setcookie("user-logout", 0, time() - 3600);
+    $productsFromMiniCart = $_SESSION['arrayInfo'];
+    $priceTotal = $_SESSION['totalPrice'];
+    $orderText = $_SESSION['orderInfo'];
+    $_SESSION['user-logout'] = false;
     session_unset();
-    header("Location: ./index.php");
 }
 
 
@@ -113,7 +127,7 @@ if (isset($_GET["logout"])) {
 
 
                         <div id="user-logged-in" class="align-self-center">
-                            <a id="logout-link" href="./index.php?logout=true">
+                            <a id="logout-link" href="./cart-page.php?logout=true">
                                 <i class="fa fa-user" aria-hidden="true"></i> SIGN OUT
                             </a>
                             <p id="user-email"><?= htmlspecialchars($_SESSION["email"]) ?></p>

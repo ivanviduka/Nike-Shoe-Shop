@@ -11,6 +11,8 @@ window.onload = (event) => {
         document.getElementById("buy-from-mini-cart").setAttribute("disabled", "true");
     }
 
+  
+
 };
 
 function addToCart(event) {
