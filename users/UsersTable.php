@@ -25,15 +25,19 @@ class UsersTable
     }
 
     public function getUser($email)
-    {
+    {   
+        $todoTask = array(
+            ':email' => $email
+        );
+
         $sql = <<<EOSQL
-            SELECT email, password FROM $this->tableName WHERE email="$email";
+            SELECT email, password FROM $this->tableName WHERE email=:email;
         EOSQL;
 
         $query = $this->conn->prepare($sql);
 
         try {
-            $query->execute();
+            $query->execute($todoTask);
             $query->setFetchMode(PDO::FETCH_ASSOC);
             return $query;
         } catch (Exception $e) {
