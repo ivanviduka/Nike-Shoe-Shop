@@ -125,6 +125,13 @@ $momentsResut = $momentsTable->getMoments();
 
         <div class="container">
 
+            <?php
+            if (isset($_SESSION["success"])) {
+                $message = $_SESSION["success"];
+                echo "<div id=\"success-message\" class=\"alert alert-success\" role=\"alert\" style=\"text-align: center;\">$message</div>";
+            }
+            ?>
+
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 
                 <div class="carousel-inner">
@@ -323,5 +330,8 @@ $momentsResut = $momentsTable->getMoments();
 
 <?php
 unset($_SESSION["totalPrice"]);
+unset($_SESSION['arrayInfo']);
 unset($_SESSION["orderInfo"]);
+unset($_SESSION["user-logout"]);
+unset($_SESSION["success"]);
 ?>
