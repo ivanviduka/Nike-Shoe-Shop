@@ -97,7 +97,7 @@ $momentsResut = $momentsTable->getMoments();
 
                         <div id="orders" class="align-self-center ms-3">
                             <button type="button" class="btn btn-outline-dark">
-                                <a id="see-orders" href=""> MY ORDERS
+                                <a id="see-orders" href="./my-orders.php"> MY ORDERS
                                 </a>
                             </button>
                         </div>
@@ -168,8 +168,8 @@ $momentsResut = $momentsTable->getMoments();
                                 <div class="border-top border-bottom border-dark shadow p-3 mb-5 bg-body rounded  d-flex justify-content-around row">
                                     <div class="col-sm-12 col-md-5">
 
-                                        <h3> <?= htmlspecialchars($row["title"]) ?> </h3>
-                                        <p class="moment-desc">
+                                        <h3 aria-label="Moments title"> <?= htmlspecialchars($row["title"]) ?> </h3>
+                                        <p class="moment-desc" aria-label="Moments Description">
                                             <?= htmlspecialchars($row["description"]) ?>
                                         </p>
                                     </div>
@@ -222,7 +222,7 @@ $momentsResut = $momentsTable->getMoments();
                     <img class="col-12 m-2 col-sm-12 m-sm-0" src=<?= htmlspecialchars($row["imgURL"]) ?> alt="Shoes">
 
                     <div class="shoe-description">
-                        <h3><?= htmlspecialchars($row["shoe_name"]) ?></h3>
+                        <h3 aria-label="Shoe name"><?= htmlspecialchars($row["shoe_name"]) ?></h3>
                         <p> Price: <span class="shoe-price"><?= htmlspecialchars($row["price"]) ?>$</span></p>
 
                         <div class="size-options">

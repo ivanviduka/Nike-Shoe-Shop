@@ -11,9 +11,13 @@ window.onload = (event) => {
         document.getElementById("buy-from-mini-cart").setAttribute("disabled", "true");
     }
 
-    setTimeout(function () {
-        document.getElementById("success-message").style.display = "none";
-    }, 4000);
+
+    if (document.getElementById("success-message")) {
+        setTimeout(function () {
+            document.getElementById("success-message").style.display = "none";
+        }, 4000);
+    }
+
 
 };
 

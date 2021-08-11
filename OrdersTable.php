@@ -27,14 +27,18 @@ class OrdersTable
 
     public function getUsersOrders($email)
     {
+        $todoTask = array(
+            ':email' => $email
+        );
+
         $sql = <<<EOSQL
-            SELECT * FROM $this->tableName WHERE email="$email";
+            SELECT * FROM $this->tableName WHERE email=:email;
         EOSQL;
 
         $query = $this->conn->prepare($sql);
 
         try {
-            $query->execute();
+            $query->execute($todoTask);
             $query->setFetchMode(PDO::FETCH_ASSOC);
             return $query;
         } catch (Exception $e) {
@@ -42,11 +46,12 @@ class OrdersTable
         }
     }
 
-    public function createOrder($city, $address, $phone_number, $email, $total_price, $order_info) {
+    public function createOrder($city, $address, $phone_number, $email, $total_price, $order_info)
+    {
 
-        $date = date_create();
-        date_add($date, date_interval_create_from_date_string('2 weeks'));
-       
+        $timestamp = mt_rand(strtotime("+2 weeks"), strtotime("+4 weeks"));
+        $randomDate = date("Y-m-d", $timestamp);
+
 
         $todoTask = array(
             ':city' => $city,
@@ -55,7 +60,7 @@ class OrdersTable
             ':email' => $email,
             ':total_price' => $total_price,
             ':order_info' => $order_info,
-            ':current_time' => date_format($date, 'Y-m-d')
+            ':current_time' => $randomDate
         );
 
         $sql = <<<EOSQL
@@ -66,6 +71,27 @@ class OrdersTable
 
         try {
             $query->execute($todoTask);
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    public function deleteOrder($orderID)
+    {
+        $todoTask = array(
+            ':id' => $orderID
+        );
+
+        $sql = <<<EOSQL
+        DELETE FROM $this->tableName WHERE id=:id;
+        EOSQL;
+
+        $query = $this->conn->prepare($sql);
+
+        try {
+            $query->execute($todoTask);
+            $query->setFetchMode(PDO::FETCH_ASSOC);
+            return $query;
         } catch (Exception $e) {
             die($e->getMessage());
         }

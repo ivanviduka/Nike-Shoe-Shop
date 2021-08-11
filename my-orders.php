@@ -1,51 +1,24 @@
 <?php
 
-if (isset($_COOKIE["userIsLoggedIn"])) {
+session_start();
+require_once("./dbconfig.php");
+require_once("./OrdersTable.php");
+
+
+if (!isset($_COOKIE["userIsLoggedIn"])) {
     header("Location: ./index.php");
 }
 
-session_start();
-require_once("./dbconfig.php");
-require_once("./users/UsersTable.php");
-$errorMsg = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    $firstName = $_POST["first-name"];
-    $lastName = $_POST["last-name"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-    $confirmPassword = $_POST["confirm-password"];
-
-    if (filter_var($firstName, FILTER_SANITIZE_STRING) && !filter_var((int)$firstName, FILTER_VALIDATE_INT) && !filter_var((int)$lastName, FILTER_VALIDATE_INT) && filter_var($lastName, FILTER_SANITIZE_STRING) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $usersTable = new UsersTable();
-        $result = $usersTable->getTakenEmails();
-        $uniqueEmail = true;
-
-        while ($currentEmail = $result->fetch()) {
-            if ($currentEmail["email"] == $email) {
-                $errorMsg = "This email already exist";
-                $_SESSION['error'] = $errorMsg;
-                $uniqueEmail = false;
-                break;
-            }
-        }
-
-        if ($uniqueEmail) {
-            if ($password === $confirmPassword) {
-                $usersTable->registerUser($firstName, $lastName, $email, $password);
-                header("Location: ./login.php");
-            } else {
-                $errorMsg = "Password and confirm password do not match";
-                $_SESSION['error'] = $errorMsg;
-            }
-        }
-    } else {
-        $errorMsg = "One or more inputs is invalid";
-        $_SESSION['error'] = $errorMsg;
-    }
+if (!isset($_SESSION["email"])) {
+    header("Location: ./index.php");
 }
+
+$ordersTable = new OrdersTable();
+$usersOrders = $ordersTable->getUsersOrders($_SESSION["email"]);
+
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -53,20 +26,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Registration for Nike Shoes Web Shop">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <meta name="description" content="List of users orders">
+    <meta name="keywords" content="NIKE, Shoes, Orders, User">
+    <title>My Orders</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style/login-and-registration.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style/order-page.css">
 </head>
 
 <body>
-
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <div class="navbar-brand">
-                    <a aria-label="Homepage" class="d-sm-b prl2-sm prl3-lg" href="./index.php">
+                    <a aria-label="Homepage" class="d-sm-b prl2-sm prl3-lg" href="index.php">
                         <svg class="pre-logo-svg" height="60px" width="60px" fill="#111" viewBox="0 0 69 32">
                             <path d="M68.56 4L18.4 25.36Q12.16 28 7.92 28q-4.8 0-6.96-3.36-1.36-2.16-.8-5.48t2.96-7.08q2-3.04 6.56-8-1.6 2.56-2.24 5.28-1.2 5.12 2.16 7.52Q11.2 18 14 18q2.24 0 5.04-.72z">
                             </path>
@@ -74,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </a>
                 </div>
 
-                <div class="ms-auto me-auto">
+                <div class="d-flex justify-content-center">
                     <div class="navbar-nav">
                         <a class="nav-link" href="#">Men</a>
                         <a class="nav-link" href="#">Women</a>
@@ -82,62 +59,75 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </div>
 
-            </div>
+                <div id="cart-and-login" class="d-flex justify-content-end me-5">
+
+                    <div id="user-logged-in" class="align-self-center">
+                        <a id="logout-link" href="./index.php?logout=true">
+                            <i class="fa fa-user" aria-hidden="true"></i> SIGN OUT
+                        </a>
+                        <p id="user-email"><?= htmlspecialchars($_SESSION["email"]) ?></p>
+                    </div>
+
+                </div>
             </div>
         </nav>
 
     </header>
 
     <section>
+
         <div class="container">
-            <div class="row">
-                <div class="col-md-4 offset-md-4">
+            <h2>MY ORDERS</h2>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Order ID</th>
+                        <th scope="col">Order Info</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Delivery Address</th>
+                        <th scope="col">Arrival Date</th>
 
-                    <?php
-                    if (isset($_SESSION["error"])) {
-                        $error = $_SESSION["error"];
-                        echo "<div class=\"alert alert-danger\" role=\"alert\" style=\"text-align: center;\">$error</div>";
-                    }
-                    ?>
-                    <div class="login-form mt-4 p-4">
-                        <form action="" method="POST" class="row g-3">
-                            <h4 style="text-align: center;">Register</h4>
-                            <div class="col-12">
-                                <input type="text" name="first-name" pattern="[a-zA-Z]*" class="form-control" placeholder="Enter your first name" required>
-                            </div>
+                    </tr>
+                </thead>
+                <tbody>
 
-                            <div class="col-12">
-                                <input type="text" name="last-name" pattern="[a-zA-Z]*" class="form-control" placeholder="Enter your last name" required>
-                            </div>
+                    <?php while ($row = $usersOrders->fetch()) :
+                        $arrivalTime = strtotime($row["arrival_date"]) - strtotime("now"); ?>
 
-                            <div class="col-12">
-                                <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
-                            </div>
+                        <?php if ($arrivalTime >= 0) : ?>
 
-                            <div class="col-12">
-                                <input type="password" name="password" class="form-control" placeholder="Enter password" required>
-                            </div>
+                            <?php
+                            $dateFormat = date('d.m.Y', strtotime($row["arrival_date"]));
 
-                            <div class="col-12">
-                                <input type="password" name="confirm-password" class="form-control" placeholder="Confirm password" required>
-                            </div>
+                            ?>
 
-                            <div class="col-12 d-flex justify-content-center">
-                                <button type="submit" class="btn btn-dark ">REGISTER</button>
-                            </div>
-                        </form>
-                        <hr class="mt-4">
-                        <div class="col-12">
-                            <p class="text-center mb-0">Already have an account? <a href="./login.php">Sign in</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                            <tr>
+                                <th scope="row">#<?= htmlspecialchars($row["ID"]) ?></th>
+                                <td aria-label="Details about this order"> <?= $row["order_info"] ?></td>
+                                <td aria-label="Total price"><?= htmlspecialchars($row["total_price"]) ?></td>
+                                <td aria-label="Arrival address"><?= htmlspecialchars($row["address"]) ?>, <?= htmlspecialchars($row["city"]) ?></td>
+                                <td aria-label="Arrival date"><?= htmlspecialchars($dateFormat) ?></td>
+
+                            </tr>
+
+                        <?php else :
+                            $ordersTable->deleteOrder($row["ID"]);
+                        ?>
+
+                        <?php endif; ?>
+
+                    <?php endwhile; ?>
+
+                </tbody>
+
+            </table>
+
         </div>
+
     </section>
 
 
-    <footer class="bg-dark text-center text-white">
+    <footer class="footer mt-auto bg-dark text-center text-white">
 
         <div class="container p-1 pb-0">
 
@@ -176,13 +166,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
     </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://www.markuptag.com/bootstrap/5/js/bootstrap.bundle.min.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
 </html>
 
-<?php
-unset($_SESSION["error"]);
-?>
+</html>

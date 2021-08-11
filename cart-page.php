@@ -6,11 +6,6 @@ require_once("./OrdersTable.php");
 $priceTotal = 0;
 $orderText = "";
 
-
-
-
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (isset($_POST['go-to-cart-page'])) {
@@ -59,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 if (isset($_GET["logout"])) {
-    
+
     unset($_SESSION["email"]);
     setcookie("user-logout", true);
     setcookie("userIsLoggedIn", 0, time() - 3600);
@@ -135,7 +130,7 @@ if (isset($_COOKIE["user-logout"])) {
 
                         <div id="orders" class="align-self-center ms-3">
                             <button type="button" class="btn btn-outline-dark">
-                                <a id="see-orders" href="#"> MY ORDERS
+                                <a id="see-orders" href="./my-orders.php"> MY ORDERS
                                 </a>
                             </button>
                         </div>
@@ -173,14 +168,15 @@ if (isset($_COOKIE["user-logout"])) {
                 </thead>
                 <tbody>
 
+
                     <?php for ($index = 0; $index < sizeof($productsFromMiniCart); $index++) : ?>
 
                         <tr>
                             <th scope="row"><?= htmlspecialchars($index + 1) ?></th>
                             <td><img class="img-thumbnail" src=<?= htmlspecialchars($productsFromMiniCart[$index]["imgURL"]) ?> alt="Shoes" height="200px" width="250px"></td>
-                            <td><?= htmlspecialchars($productsFromMiniCart[$index]["name"]) ?></td>
-                            <td><?= htmlspecialchars($productsFromMiniCart[$index]["price"]) ?></td>
-                            <td><?= htmlspecialchars($productsFromMiniCart[$index]["shoeSize"]) ?></td>
+                            <td aria-label="Shoe name"><?= htmlspecialchars($productsFromMiniCart[$index]["name"]) ?></td>
+                            <td aria-label="Shoe price"><?= htmlspecialchars($productsFromMiniCart[$index]["price"]) ?></td>
+                            <td aria-label="Shoe size"><?= htmlspecialchars($productsFromMiniCart[$index]["shoeSize"]) ?></td>
 
                         </tr>
 
@@ -219,7 +215,7 @@ if (isset($_COOKIE["user-logout"])) {
                 </div>
                 <div class="mb-3">
                     <label for="user-phone-number" class="form-label">Phone number</label>
-                    <input type="tel" name="phone-number" class="form-control" id="user-phone-number" aria-label="Enter your phone number" required>
+                    <input type="tel" name="phone-number" class="form-control" pattern="[0-9]+" id="user-phone-number" aria-label="Enter your phone number" required>
                 </div>
 
                 <?php if (isset($_COOKIE["userIsLoggedIn"])) : ?>
