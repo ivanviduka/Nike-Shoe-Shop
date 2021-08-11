@@ -24,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (isset($_POST['create-order'])) {
-
         $productsFromMiniCart = $_SESSION['arrayInfo'];
         $priceTotal = $_SESSION['totalPrice'];
         $orderText = $_SESSION['orderInfo'];
@@ -38,13 +37,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $order_info = $_POST["order-info"];
 
         if (
-            filter_var($city, FILTER_SANITIZE_STRING) && !filter_var((int)$city, FILTER_VALIDATE_INT) && filter_var($address, FILTER_SANITIZE_STRING) && filter_var($email, FILTER_VALIDATE_EMAIL)
-            && filter_var((int)$phone, FILTER_VALIDATE_INT) && ((int)$phone != 0) && filter_var($price, FILTER_VALIDATE_INT) && filter_var($order_info, FILTER_SANITIZE_STRING)
+            filter_var($city, FILTER_SANITIZE_STRING) && !filter_var((int)$city, FILTER_VALIDATE_INT) && filter_var($address, FILTER_SANITIZE_STRING) && !filter_var((int)$address, FILTER_VALIDATE_INT) 
+            && filter_var($email, FILTER_VALIDATE_EMAIL) && filter_var((int)$phone, FILTER_VALIDATE_INT) && ((int)$phone != 0) && filter_var($price, FILTER_VALIDATE_INT) && filter_var($order_info, FILTER_SANITIZE_STRING)
         ) {
             $ordersTable = new OrdersTable();
             $ordersTable->createOrder($city, $address, $phone, $email, $price, $order_info);
             $successMsg = "Your order has been received";
             $_SESSION['success'] = $successMsg;
+            session_start();
             header("Location: ./index.php");
         } else {
             $errorMsg = "One or more inputs is invalid";
@@ -68,7 +68,6 @@ if (isset($_COOKIE["user-logout"])) {
     $priceTotal = $_SESSION['totalPrice'];
     $orderText = $_SESSION['orderInfo'];
     $_SESSION['user-logout'] = false;
-    session_unset();
 }
 
 

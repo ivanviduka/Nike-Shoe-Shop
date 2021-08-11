@@ -334,4 +334,5 @@ unset($_SESSION['arrayInfo']);
 unset($_SESSION["orderInfo"]);
 unset($_SESSION["user-logout"]);
 unset($_SESSION["success"]);
+unset($_SESSION["error"]);
 ?>
