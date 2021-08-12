@@ -1,0 +1,120 @@
+a.nav-link{
+    font-size: 1.5em;
+    padding-right: 10%;
+}
+
+.bg-light {
+    background-color: #adadad44!important;
+}
+
+.nav-link:focus, .nav-link:hover {
+    color:#000000;
+}
+
+.fa{
+    color: #000;
+    
+
+}
+
+#login-link{
+    color: #000;
+    text-decoration: none;
+}
+
+#logout-link {
+    color: #000;
+    text-decoration: none;
+}
+
+#see-orders {
+    color: #000;
+    text-decoration: none;
+}
+
+#see-orders:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+#orders:hover #see-orders{
+    color: #fff;
+}
+
+#logout-button{
+    border: 0px;
+    margin-bottom: 5px;
+}
+
+#user-logged-in {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#user-email{
+    font-weight: 600;
+}
+
+
+body > section > div > table > td{
+    width: 450px;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+table > thead > tr > th {
+    font-size: 30px;
+    text-transform: uppercase;
+
+}
+
+.container{
+    margin-top: 50px;
+}
+
+body > section > div > table {
+    margin-right: 10px;
+}
+
+table > tbody > tr > td {
+    font-size: 20px;
+    vertical-align: middle;
+    
+}
+
+
+body > section {
+    margin-bottom: 200px;
+}
+
+body > section > div{
+    margin-bottom: 100px;
+}
+
+.order-info h2 {
+    text-align: center;
+}
+
+.center-holder{
+    text-align: center;
+    
+}
+
+#total-price{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+@media only screen and (max-width: 550px) {
+    #cart-and-login {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    table > thead > tr > th {
+        font-size: 25px;
+        text-transform: uppercase;
+    
+    }
+  }

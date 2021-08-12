@@ -1,0 +1,121 @@
+a.nav-link{
+    font-size: 1.5em;
+    padding-right: 10%;
+}
+
+.bg-light {
+    background-color: #adadad44!important;
+}
+
+.nav-link:focus, .nav-link:hover {
+    color:#000000;
+}
+
+.fa{
+    color: #000;
+    
+
+}
+
+
+h2{
+    text-align: center;
+    margin-bottom: 50px;
+}
+#logout-link {
+    color: #000;
+    text-decoration: none;
+}
+
+
+#logout-button{
+    border: 0px;
+    margin-bottom: 5px;
+}
+
+#user-logged-in {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#user-email{
+    font-weight: 600;
+}
+
+body > section > div > table > td{
+    width: 500px;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+table > thead > tr > th {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 32px;
+    text-transform: uppercase;
+    text-align: center;
+
+}
+
+.container{
+    margin-top: 50px;
+}
+
+table > tbody > tr > td {
+    font-size: 20px;
+    vertical-align: middle;  
+    text-align: center;
+}
+
+table > tbody > tr > th {
+    vertical-align: middle;  
+    text-align: center;
+}
+
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+body > section > div{
+    margin-bottom: 100px;
+}
+
+
+
+@media only screen and (max-width: 550px) {
+    #cart-and-login {
+        margin-left: auto;
+        margin-right: auto;
+    }
+  
+}
+
+@media only screen and (max-width: 620px) {
+    table > thead > tr > th {
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 23px;
+        text-transform: uppercase;
+        text-align: center;
+    
+    }
+
+    table > tbody > tr > td {
+        font-size: 17px;
+        vertical-align: middle;  
+        text-align: center;
+    }
+
+ 
+}
+
+@media only screen and (max-width: 1200px) {
+    footer{
+        position: sticky;
+    }
+}
+
