@@ -139,7 +139,6 @@ $momentsResut = $momentsTable->getMoments();
                     <?php
                     $firstArticle = true;
                     while ($row = $momentsResut->fetch()) : ?>
-
                         <?php if ($firstArticle) :
                             $firstArticle = false; ?>
 
@@ -150,7 +149,8 @@ $momentsResut = $momentsTable->getMoments();
 
                                         <h3> <?= htmlspecialchars($row["title"]) ?> </h3>
                                         <p class="moment-desc">
-                                            <?= htmlspecialchars($row["description"]) ?>
+                                            <?=htmlspecialchars($row["description"])?>
+
                                         </p>
                                     </div>
 
@@ -170,7 +170,8 @@ $momentsResut = $momentsTable->getMoments();
 
                                         <h3 aria-label="Moments title"> <?= htmlspecialchars($row["title"]) ?> </h3>
                                         <p class="moment-desc" aria-label="Moments Description">
-                                            <?= htmlspecialchars($row["description"]) ?>
+                                            <?=htmlspecialchars($row["description"])?>
+
                                         </p>
                                     </div>
 
