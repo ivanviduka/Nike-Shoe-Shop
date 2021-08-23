@@ -2,6 +2,8 @@
 
 Heroku link: https://nike-shoe-shop.herokuapp.com/
 
+<b>Napomena</b>: Opisi sportskih događaja na početnoj stranici se u većini slučajeva ne dohvaćaju otkad je prebačeno na remote bazu podataka (lokalno sve radi ispravno). U slučaju korištenja funckije var_dump, svi tekstovi se ispisuju iz problema, ali <?= uglavnom ne dohvaća tekst. 
+
 Projekt prikazuje web-shop za Nike patike. Na početnoj stranici prikazani su bitni sportski događaji na kojima je nošena Nike oprema te patike koje je moguće naručiti. Odabir veličine patika napravljen je pomoću radio buttona. U bazi podataka nije implementirano praćenje preostale količine i broja patika (moguće je neograničeno naručivati). Također, header stranice je drugačiji ovisno o tome je li korisnik ulogiran ili ne. Ukoliko nije, u desnom kutu može vidjeti ikonicu za shop-cart koja otvara popis svih odabranih patika i opciju za kupovinu, te link koji ga odvodi na stranicu za logiranje. Ukoliko je korisnik već prijavljen, prikazan mu je shop-cart, link za odjavu, zajedno s njegovim e-mailom te link za pregled narudžbi koje je dosada kreirao.
 
 Na stranici za prijavu, korisnik mora unijeti ispravan e-mail i lozinku, a ukoliko nema račun, može se registrirati na idućoj stranici. E-mail račun koji se koristi pri registraciji mora biti jedinstven (u bazi podataka ima atribut unique).
